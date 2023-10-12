@@ -1,166 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        * { box-sizing: border-box }
-        html {
-            color-scheme: light dark;
-            font-family: sans-serif;
-            text-align: center;
-            line-height: 1.6;
-            color: color-mix(
-                    in srgb,
-                    CanvasText 50%, 
-                    grey
-                );
-        }
-        body { margin: 0 }
-        button {
-            position: fixed;
-            left: 0.5em;
-            bottom: 0.5em;
-            opacity: 0.1;
-            transition: opacity 0.25s;
-            &:hover { opacity: 0.75 }
-            &:active { opacity: 1 }
-        }
-        main.show {
-            scroll-snap-type: block mandatory;
-            scroll-snap-stop: always;
-            overflow-y: scroll;
-            height: 100vh;
-            font-size: 2.5rem;
-        }
-        .show .intro > :first-child {
-            font-size: 2em; 
-            font-weight: bold;
-        }
-        .show div {
-            height: 100vh;
-            scroll-snap-align: start;
-
-            display: grid;
-            place-content: center;
-            background: radial-gradient(
-                    circle,
-                    rgba(128,128,128,0.2) 0%,
-                    Canvas 100%
-                );
-            &:not(:last-child) {
-                margin-bottom: 1rem;
-            }
-        }
-        .rainbow12 {
-            background: linear-gradient(
-                90deg, 
-                rgba(128,16,112,1) 0%, 
-                rgba(128,16,112,1) 8.33%, 
-                rgba(160,48,80,1) 8.33%, 
-                rgba(160,48,80,1) 16.67%, 
-                rgba(192,96,96,1) 16.67%, 
-                rgba(192,96,96,1) 26%, 
-                rgba(224,144,64,1) 26%, 
-                rgba(224,144,64,1) 34.33%, 
-                rgba(224,208,0,1) 34.33%, 
-                rgba(224,208,0,1) 42.67%, 
-                rgba(144,208,80,1) 42.67%, 
-                rgba(144,208,80,1) 51%, 
-                rgba(64,208,128,1) 51%, 
-                rgba(64,208,128,1) 59.33%, 
-                rgba(32,192,176,1) 59.33%, 
-                rgba(32,192,176,1) 67.67%, 
-                rgba(0,176,192,1) 67.67%, 
-                rgba(0,176,192,1) 76%, 
-                rgba(0,144,192,1) 76%, 
-                rgba(0,144,192,1) 84.33%, 
-                rgba(48,96,176,1) 84.33%, 
-                rgba(48,96,176,1) 92.67%, 
-                rgba(96,48,144,1) 92.67%, 
-                rgba(96,48,144,1) 100%
-            );
-        }
-        .rainbow5 {
-            background: linear-gradient(
-                90deg, 
-                rgba(160,48,80,1) 0%, 
-                rgba(160,48,80,1) 20%, 
-                rgba(224,144,64,1) 20%, 
-                rgba(224,144,64,1) 40%, 
-                rgba(224,208,0,1) 40%, 
-                rgba(224,208,0,1) 60%, 
-                rgba(64,208,128,1) 60%, 
-                rgba(64,208,128,1) 80%, 
-                rgba(48,96,176,1) 80%, 
-                rgba(48,96,176,1) 100%
-            );
-        }
-        .clip-text { 
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: color-mix(in srgb, CanvasText 25%, transparent);
-        }
-        .code {
-            font-family: monospace;
-        }
-    </style>
-    <title>Slideshow</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Slideshow</title>
 </head>
 <body>
-    <main class="show">
-        <div class="intro">
-            <p>Hello!
-                <br>I'm <span class="rainbow12 clip-text">Sara</span> :)</p>
-            <p>A Quereinsteigerin into web dev in 2022, hobbyist since 1998!
-                <br>Highly interested in inclusive design and accessibility.</p>
-        </div>
-        <div class="title">
-            <h1>Easy Dark Mode
-                <br>with <span class="rainbow12 clip-text code">color-scheme</span></h1>
-            <p>It's just black and white.
-                <br>But should it be? 🤔</p>
-        </div>
-        <div>
-            <h2>First, a question...</h2>
-            ...is this comfortable to read?
-            <h3 class="appear">Does anyone suffer from:</h3>
-            Migraines?
-                <br>Epilepsy?
-                <br>Strong astigmatism?
-        </div>
-        <div><h2>does</h2><p>Content text here</p></div>
-        <div><h2>this</h2><p>Content text here</p></div>
-        <div><h2>not</h2><p>Content text here</p></div>
-        <div><h2>snap</h2><p>Content text here</p></div>
-        <div><h2>oh</h2><p>Content text here</p></div>
-        <div><h2>wait</h2><p>Content text here</p></div>
-        <div><h2>now</h2><p>Content text here</p></div>
-        <div><h2>it</h2><p>Content text here</p></div>
-        <div><h2>does</h2><p>Content text here</p></div>
-        <div><h2>yay!</h2><p>Content text here</p></div>
-    </main>
-    <button id="show" onClick="slideshowToggle()">Toggle Slideshow</button>
-    <script>
-        function slideshowToggle() {
-            document.querySelector("main").classList.toggle("show");
-        }
+  <main class="show">
+    <section class="intro">
+      <header>
+        <p class="big">Hello!</p>
+      </header>
+			<div class="content">
+				<p class="big">I'm <span class="rainbow12 clip-text">Sara</span> :)</p>
+				<p>A Quereinsteigerin into web dev in 2022, hobbyist since 1998!
+					<br>Highly interested in inclusive design and accessibility.</p>
+			</div>
+		</section>
+		<section class="title">
+			<header>
+				<h1>Easy Dark Mode</h1>
+			</header>
+			<div class="content">
+				<p class="big">with <span class="rainbow12 clip-text code">color-scheme</span></p>
+				<p>It's just black and white.
+					<br>But should it be? 🤔</p>
+			</div>
+		</section>
+		<section>
+			<header>
+				<h2>First, a question...</h2>
+			</header>
+			<div class="content left">
+				...is this comfortable to read?
+				<h3>Does anyone suffer from:</h3>
+				Migraines?
+					<br>Epilepsy?
+					<br>Strong astigmatism?
+			</div>
+		</section>
+		<section>
+			<header>
+				<h2>Slide title here</h2>
+			</header>
+			<div class="content">
+				<p class="big">Not-heading big text</p>
+				Content here
+			</div>
+		</section>
+		<section>
+			<header>
+				<h2>title</h2>
+			</header>
+			<div class="content">
+				<h3>Intermediate heading</h3>
+				<ul>
+					<li>Bullet point</li>
+					<li>Bullet point</li>
+					<li>Bullet point</li>
+				</ul>
+			</div>
+		</section>
+		<section>
+			<header>
+				<h2>title</h2>
+			</header>
+			<div class="content">
+				content
+			</div>
+		</section>
+		<section>
+			<header>
+				<h2>title</h2>
+			</header>
+			<div class="content">
+				content
+			</div>
+		</section>
+		<section>
+			<header>
+				<h2>title</h2>
+			</header>
+			<div class="content">
+				content
+			</div>
+		</section>
+		<section>
+			<header>
+				<h2>title</h2>
+			</header>
+			<div class="content">
+				content
+			</div>
+		</section>
+		<section>
+			<header>
+				<h2>title</h2>
+			</header>
+			<div class="content">
+				content
+			</div>
+		</section>
+		<section>
+			<header>
+				<h2>title</h2>
+			</header>
+			<div class="content">
+				content
+			</div>
+		</section>
+	</main>
+	<button id="show" onClick="slideshowToggle()">Toggle Slideshow</button>
+	<script>
+	function slideshowToggle() {
+		document.querySelector("main").classList.toggle("show");
+	}
 
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "PageDown") {
-                event.preventDefault();
-                console.log("Page Down!");
-            }
-        });
+	document.addEventListener("keydown", (event) => {
+		if (event.key === "PageDown") {
+			console.log("Page Down!");
+		}
+	});
 
-        function isInViewport(el) {
-            const rect = el.getBoundingClientRect();
-            // console.log(rect);
-            return (
-                //CHECK IF PARTIALLY VISIBLE
-                rect.top < window.innerHeight && rect.bottom >= 0
-            );
-        }
-    </script>
+	function isInViewport(el) {
+		const rect = el.getBoundingClientRect();
+		// console.log(rect);
+		return (
+			//CHECK IF PARTIALLY VISIBLE
+			rect.top < window.innerHeight && rect.bottom >= 0
+		);
+	}
+	</script>
 </body>
 </html>
