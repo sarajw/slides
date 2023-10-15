@@ -1,8 +1,9 @@
 :root {
 	--big-font: 1.5em;
-	--header-height: 12dvh;
+	--header-height: 10dvh;
 
-	--pop: 325 35%;
+	--pop: 320 50%;
+	--gry: 0 0%;
 	--bg-pop: hsl(var(--pop) 20%);
 }
 
@@ -11,9 +12,7 @@
 html {
 	color-scheme: light dark;
 	font-family: sans-serif;
-	text-align: center;
 	line-height: 1.6;
-	font-size: max(1.5em, 3.5vw);
 }
 
 body { margin: 0 }
@@ -33,7 +32,8 @@ main.show {
 	scroll-snap-stop: always;
 	overflow-y: scroll;
 	height: 100dvh;
-	background-color: var(--bg-pop);
+	font-size: max(1.5em, 3.25vw);
+	/* background-color: var(--bg-pop); */
 	background-color: color-mix(
 		in srgb,
 		var(--bg-pop) 90%, 
@@ -41,7 +41,7 @@ main.show {
 	);
 	color: color-mix(
 		in srgb,
-		hsl(0 0% 75%) 80%, 
+		hsl(0 0% 75%) 90%, 
 		Canvas
 	);
 
@@ -59,6 +59,7 @@ main.show {
 	& header {
 		height: var(--header-height);
 		line-height: var(--header-height);
+		text-align: center;
 		> * {
 			margin: 0;
 		}
@@ -68,6 +69,9 @@ main.show {
 		font-size: var(--big-font);
 		font-weight: bold;
 	}
+	.center {
+		text-align: center;
+	}
 
 	.content {
 		height: calc(99dvh - var(--header-height));
@@ -76,10 +80,10 @@ main.show {
 		padding: 2%;
 		background: radial-gradient(
 			circle,
-			color-mix(in hsl, hsl(var(--pop) 50%) 30%, Canvas) 0%,
-			color-mix(in hsl, hsl(var(--pop) 50%) 30%, Canvas) 20%,
-			color-mix(in hsl, hsl(var(--pop) 50%) 20%, Canvas) 50%,
-			Canvas 100%
+			color-mix(in hsl, hsl(var(--pop) 50%) 25%, Canvas) 0%,
+			color-mix(in hsl, hsl(var(--pop) 50%) 25%, Canvas) 20%,
+			color-mix(in hsl, hsl(var(--pop) 50%) 20%, Canvas) 90%,
+			color-mix(in hsl, hsl(var(--pop) 50%) 15%, Canvas) 100%
 		);
 		color: color-mix(
 			in srgb,
@@ -88,21 +92,24 @@ main.show {
 		);
 		border-radius: 1.5dvh;
 		margin: 0 1dvh;
+		
+		&.columns2 {
+			grid-template-columns: auto auto;
+			gap: 1rem;
+		}
+		.quarter {
+			max-width: 25vw;
+		}
 	}
 }
 
-.left, ul {
-	text-align: initial;
+/* ul {
 	&:not(.show &) {
 		width: fit-content;
 		margin-inline: auto;
 	}
-}
-/* ul {
-	width: fit-content;
-	margin-inline: auto;
-	outline: 1px dashed;
 } */
+
 
 .rainbow12 {
 	background: linear-gradient(
