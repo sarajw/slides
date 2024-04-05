@@ -1,57 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        * { box-sizing: border-box }
-        html { color-scheme: light dark }
-        body { margin: 0 }
-        section.show {
-            scroll-snap-type: block mandatory;
-            scroll-snap-stop: always;
-            overflow-y: scroll;
-            height: 100vh;
-        }
-        .show div {
-            height: 100vh;
-            scroll-snap-align: start;
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			* { box-sizing: border-box }
+			html { color-scheme: light dark }
+			body { margin: 0 }
+			main.show {
+					scroll-snap-type: block mandatory;
+					scroll-snap-stop: always;
+					overflow-y: scroll;
+					height: 100vh;
+			}
+			.show div {
+					height: 100vh;
+					scroll-snap-align: start;
 
-            display: grid;
-            place-content: center;
-            &:not(:last-child) {
-                margin-bottom: 1rem;
-            }
-        }
-        .mgn {background-color: #8173}
-        .red {background-color: #a353}
-        .pch {background-color: #c663}
-        .orn {background-color: #e943}
-        .ylw {background-color: #ed03}
-        .lim {background-color: #9d53}
-        .grn {background-color: #4d83}
-        .tqs {background-color: #2cb3}
-        .sky {background-color: #0bc3}
-        .blu {background-color: #09c3}
-        .nav {background-color: #36b3}
-        .prp {background-color: #6393}
-    </style>
-    <title>Slideshow</title>
-</head>
-<body>
-    <section class="show">
-        <div class="mgn"><h1>hello</h1><p>Content text here</p></div>
-        <div class="red"><h2>why</h2><p>Content text here</p></div>
-        <div class="pch"><h2>does</h2><p>Content text here</p></div>
-        <div class="orn"><h2>this</h2><p>Content text here</p></div>
-        <div class="ylw"><h2>not</h2><p>Content text here</p></div>
-        <div class="lim"><h2>snap</h2><p>Content text here</p></div>
-        <div class="grn"><h2>oh</h2><p>Content text here</p></div>
-        <div class="tqs"><h2>wait</h2><p>Content text here</p></div>
-        <div class="sky"><h2>now</h2><p>Content text here</p></div>
-        <div class="blu"><h2>it</h2><p>Content text here</p></div>
-        <div class="nav"><h2>does</h2><p>Content text here</p></div>
-        <div class="prp"><h2>yay!</h2><p>Content text here</p></div>
-    </section>
-</body>
+					display: grid;
+					place-content: center;
+					&:not(:last-child) {
+							margin-bottom: 1rem;
+					}
+			}       
+			button#show {
+			position: fixed;
+			left: 0.5em;
+			bottom: 0.5em;
+			opacity: 0.1;
+			transition: opacity 0.25s;
+			&:hover { opacity: 0.75 }
+			&:active { opacity: 1 }
+			}
+			.show .mgn {background-color: #8173}
+			.show .red {background-color: #a353}
+			.show .pch {background-color: #c663}
+			.show .orn {background-color: #e943}
+			.show .ylw {background-color: #ed03}
+			.show .lim {background-color: #9d53}
+			.show .grn {background-color: #4d83}
+			.show .tqs {background-color: #2cb3}
+			.show .sky {background-color: #0bc3}
+			.show .blu {background-color: #09c3}
+			.show .nav {background-color: #36b3}
+			.show .prp {background-color: #6393}
+		</style>
+		<title>Slideshow</title>
+	</head>
+	<body>
+		<main class="show">
+			<div class="mgn"><h1>hello</h1><p>Content text here</p></div>
+			<div class="red"><h2>why</h2><p>Content text here</p></div>
+			<div class="pch"><h2>does</h2><p>Content text here</p></div>
+			<div class="orn"><h2>this</h2><p>Content text here</p></div>
+			<div class="ylw"><h2>not</h2><p>Content text here</p></div>
+			<div class="lim"><h2>snap</h2><p>Content text here</p></div>
+			<div class="grn"><h2>oh</h2><p>Content text here</p></div>
+			<div class="tqs"><h2>wait</h2><p>Content text here</p></div>
+			<div class="sky"><h2>now</h2><p>Content text here</p></div>
+			<div class="blu"><h2>it</h2><p>Content text here</p></div>
+			<div class="nav"><h2>does</h2><p>Content text here</p></div>
+			<div class="prp"><h2>yay!</h2><p>Content text here</p></div>
+			<div class="mgn"><h2>here</h2><p>Content text here</p></div>
+			<div class="red"><h2>we</h2><p>Content text here</p></div>
+			<div class="pch"><h2>go</h2><p>Content text here</p></div>
+			<div class="orn"><h2>again</h2><p>Content text here</p></div>
+		</main>
+		<button id="show" onClick="slideshowToggle()">Toggle Slideshow</button>
+		<script>
+		function slideshowToggle() {
+			document.querySelector("main").classList.toggle("show");
+		}
+
+		// document.addEventListener("keydown", (event) => {
+		// 	if (event.key === "PageDown") {
+		// 		console.log("Page Down!");
+		// 	}
+		// });
+		</script>
+	</body>
 </html>
