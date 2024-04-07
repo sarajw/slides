@@ -1,0 +1,78 @@
+:root {
+
+  /* https://iamkate.com/data/12-bit-rainbow/ */
+  --mgn: #817;
+  --red: #a35;
+  --pch: #c66;
+  --orn: #e94;
+  --ylw: #ed0;
+  --lim: #9d5;
+  --grn: #4d8;
+  --tqs: #2cb;
+  --sky: #0bc;
+  --blu: #09c;
+  --nav: #36b;
+  --prp: #639;
+
+  --bgOpacity: 0.25;
+}
+
+* { box-sizing: border-box }
+
+html {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.show {
+  body { margin: 0 }
+
+  main {
+    scroll-snap-type: block mandatory;
+    scroll-snap-stop: always;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  main > div {
+    height: 100vh;
+    scroll-snap-align: start;
+
+    display: grid;
+    place-content: center;
+    &:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+  }
+
+  .title {
+    h1 { font-size: 3rem }
+    p { font-size: 2rem }
+  }
+
+  .center { text-align: center }
+
+  .mgn {background-color: hsl(from var(--mgn) h s l / var(--bgOpacity)) }
+  .pch {background-color: hsl(from var(--pch) h s l / var(--bgOpacity)) }
+  .red {background-color: hsl(from var(--red) h s l / var(--bgOpacity)) }
+  .orn {background-color: hsl(from var(--orn) h s l / var(--bgOpacity)) }
+  .ylw {background-color: hsl(from var(--ylw) h s l / var(--bgOpacity)) }
+  .lim {background-color: hsl(from var(--lim) h s l / var(--bgOpacity)) }
+  .grn {background-color: hsl(from var(--grn) h s l / var(--bgOpacity)) }
+  .tqs {background-color: hsl(from var(--tqs) h s l / var(--bgOpacity)) }
+  .sky {background-color: hsl(from var(--sky) h s l / var(--bgOpacity)) }
+  .blu {background-color: hsl(from var(--blu) h s l / var(--bgOpacity)) }
+  .nav {background-color: hsl(from var(--nav) h s l / var(--bgOpacity)) }
+  .prp {background-color: hsl(from var(--prp) h s l / var(--bgOpacity)) }
+}
+
+button#show {
+  position: fixed;
+  left: 0.5em;
+  bottom: 0.5em;
+  opacity: 0.1;
+  transition: opacity 0.25s;
+  &:hover { opacity: 0.75 }
+  &:active { opacity: 1 }
+}
