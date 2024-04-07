@@ -8,40 +8,120 @@
 	</head>
 	<body>
 		<main>
-			<div class="title center mgn">
-				<h1>Why not both?</h1>
-				<p>Or, why building both dark and light schemes together is easy, actually.</p>
+			<div id="slide1" class="title centerblock center mgn">
+				<h1>why not both?</h1>
+				<p class="balance">Or, why building both dark and light schemes together is easy, actually.</p>
 			</div>
 
-			<div class="red"><h2>hello! 👋</h2><p>Content text here</p></div>
+			<div id="slide2" class="red">
+				<h2>hello! 👋</h2>
+				<div>
+					<p>Sara Joy here.</p>
+					<p id="1" class="hide">I'm both:</p>
+					<p id="2" class="hide"> an old hand
+						<br><i>(built my first websites as a teen in 1999)</i></p>
+					<p id="3" class="hide"> and a newbie
+						<br><i>(swiched career from general small-company engineering into web development in 2022)</i></p>
+				</div>
+			</div>
 
-			<div class="pch"><h2>does</h2><p>Content text here</p></div>
+			<div id="slide3" class="pch">
+				<h2>dark mode vs. light mode</h2>
+				<div>
+					<p>We all love a good polarising argument!</p>
+				</div>
+			</div>
 
-			<div class="orn"><h2>this</h2><p>Content text here</p></div>
+			<div id="slide4" class="orn">
+				<h2>why dark mode?</h2>
+				<div>
+					<p>Content text here</p>
+				</div>
+			</div>
 
-			<div class="ylw"><h2>not</h2><p>Content text here</p></div>
+			<div id="slide5" class="ylw">
+				<h2>why light mode?</h2>
+				<div>
+					<p>Content text here</p>
+				</div>
+			</div>
 
-			<div class="lim"><h2>snap</h2><p>Content text here</p></div>
+			<div id="slide6" class="lim">
+				<h2>why not both?</h2>
+				<div>
+					<p>Content text here</p>
+				</div>
+			</div>
 
-			<div class="grn"><h2>oh</h2><p>Content text here</p></div>
+			<div id="slide7" class="grn">
+				<h2>it's hard!</h2>
+				<div>
+					<p>Content text here</p>
+				</div>
+			</div>
 
-			<div class="tqs"><h2>wait</h2><p>Content text here</p></div>
+			<div id="slide8" class="tqs">
+				<h2>starting from scratch</h2>
+				<div>
+					<p>Content text here</p>
+				</div>
+			</div>
 
-			<div class="sky"><h2>now</h2><p>Content text here</p></div>
+			<div id="slide9" class="sky">
+				<h2>default HTML themes</h2>
+				<div>
+					<p>Content text here</p>
+				</div>
+			</div>
 
-			<div class="blu"><h2>it</h2><p>Content text here</p></div>
+			<div id="slide10" class="blu">
+				<h2>color-scheme</h2>
+				<div>
+					<p>Content text here</p>
+				</div>
+			</div>
 
-			<div class="nav"><h2>does</h2><p>Content text here</p></div>
+			<div id="slide11" class="nav">
+				<h2>system colors</h2>
+				<div>
+					<p>Content text here</p>
+				</div>
+			</div>
 
-			<div class="prp"><h2>yay!</h2><p>Content text here</p></div>
+			<div id="slide12" class="prp">
+				<h2>other colours</h2>
+				<div>
+					<p>color-mix, relative colors, filtering</p>
+				</div>
+			</div>
 
-			<div class="mgn"><h2>here</h2><p>Content text here</p></div>
+			<div id="slide13" class="mgn">
+				<h2>prefers-color-scheme</h2>
+				<div>
+					<p>Content text here</p>
+				</div>
+			</div>
 
-			<div class="red"><h2>we</h2><p>Content text here</p></div>
+			<div id="slide14" class="red">
+				<h2>light-dark()</h2>
+				<div>
+					<p>Content text here</p>
+				</div>
+			</div>
 
-			<div class="pch"><h2>go</h2><p>Content text here</p></div>
+			<div id="slide15" class="pch">
+				<h2>contrast too high?</h2>
+				<div>
+					<p>Content text here</p>
+				</div>
+			</div>
 
-			<div class="orn"><h2>again</h2><p>Content text here</p></div>
+			<div id="slide16" class="orn">
+				<h2>takeaway - offer choice</h2>
+				<div>
+					<p>Content text here</p>
+				</div>
+			</div>
 		</main>
 		<button id="show" onClick="slideshowToggle()">Toggle Slideshow</button>
 		<script>
@@ -49,11 +129,19 @@
 			document.querySelector("html").classList.toggle("show");
 		}
 
-		// document.addEventListener("keydown", (event) => {
-		// 	if (event.key === "PageDown") {
-		// 		console.log("Page Down!");
-		// 	}
-		// });
+		let reveal = 0;
+		document.addEventListener("keyup", (event) => {
+			if (event.key === "n" || event.key === "ArrowRight") {
+				reveal++;
+			document.getElementById(reveal)?.classList.remove("hide");
+			}
+			if (event.key === "b" || event.key === "ArrowLeft") {
+			document.getElementById(reveal)?.classList.add("hide");
+				reveal--;
+			}
+			if (reveal < 0) reveal = 0;
+			if (reveal > 0) console.log(reveal);
+		});
 		</script>
 	</body>
 </html>
