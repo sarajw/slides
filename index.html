@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="color-scheme" content="light dark">
 		<link rel="stylesheet" href="style.css">
 		<title>Slideshow</title>
 	</head>
@@ -29,6 +30,9 @@
 				<h2>dark mode vs. light mode</h2>
 				<div>
 					<p>We all love a good polarising argument!</p>
+					<p id="4" class="hide">But there are valid reasons to prefer one over the other.</p>
+					<p id="5" class="hide">Also, you're allowed to just like light or dark websites better, for no good reason!</p>
+					<p id="6" class="hide">Your eyes, your choice! <span id="7" class="hide">👀</span></p>
 				</div>
 			</div>
 
@@ -54,7 +58,7 @@
 			</div>
 
 			<div id="slide7" class="grn">
-				<h2>it's hard!</h2>
+				<h2>this talk's scope</h2>
 				<div>
 					<p>Content text here</p>
 				</div>
@@ -89,28 +93,28 @@
 			</div>
 
 			<div id="slide12" class="prp">
+				<h2>contrast too high?</h2>
+				<div>
+					<p>Content text here</p>
+				</div>
+			</div>
+
+			<div id="slide13" class="mgn">
 				<h2>other colours</h2>
 				<div>
 					<p>color-mix, relative colors, filtering</p>
 				</div>
 			</div>
 
-			<div id="slide13" class="mgn">
+			<div id="slide14" class="red">
 				<h2>prefers-color-scheme</h2>
 				<div>
 					<p>Content text here</p>
 				</div>
 			</div>
 
-			<div id="slide14" class="red">
-				<h2>light-dark()</h2>
-				<div>
-					<p>Content text here</p>
-				</div>
-			</div>
-
 			<div id="slide15" class="pch">
-				<h2>contrast too high?</h2>
+				<h2>light-dark()</h2>
 				<div>
 					<p>Content text here</p>
 				</div>
@@ -124,7 +128,28 @@
 			</div>
 		</main>
 		<button id="show" onClick="slideshowToggle()">Toggle Slideshow</button>
+		<button id="mode" onClick="modeSwitcher()">Auto Mode</button>
 		<script>
+		function modeSwitcher() {
+			const mode = document.querySelector('meta[name="color-scheme"]');
+			const button = document.getElementById("mode");
+			if (mode.getAttribute("content") === "light dark") {
+				mode.setAttribute("content", "light");
+				button.innerText = "Light Mode";
+				return;
+			}
+			if (mode.getAttribute("content") === "light") {
+				mode.setAttribute("content", "dark");
+				button.innerText = "Dark Mode";
+				return;
+			}
+			if (mode.getAttribute("content") === "dark") {
+				mode.setAttribute("content", "light dark");
+				button.innerText = "Auto Mode";
+				return;
+			}
+		}
+
 		function slideshowToggle() {
 			document.querySelector("html").classList.toggle("show");
 		}

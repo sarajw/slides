@@ -17,10 +17,11 @@
   --bgOpacity: 0.15;
 }
 
-* { box-sizing: border-box }
+* {
+  box-sizing: border-box;
+}
 
 html {
-  color-scheme: light dark;
   font-family: system-ui, sans-serif;
   line-height: 1.6;
 }
@@ -62,7 +63,10 @@ html {
     place-content: center;
   }
   .balance { text-wrap: balance }
-  .hide { display: none }
+  .hide {
+    opacity: 0;
+    transition: opacity ease-in-out 1s;
+  }
 
   .mgn {background-color: hsl(from var(--mgn) h s l / var(--bgOpacity)) }
   .pch {background-color: hsl(from var(--pch) h s l / var(--bgOpacity)) }
@@ -78,12 +82,17 @@ html {
   .prp {background-color: hsl(from var(--prp) h s l / var(--bgOpacity)) }
 }
 
-button#show {
+button:is(#show, #mode) {
   position: fixed;
-  left: 0.5em;
   bottom: 0.5em;
-  opacity: 0.1;
+  opacity: 0;
   transition: opacity 0.25s;
   &:hover { opacity: 0.75 }
   &:active { opacity: 1 }
+}
+button#show {
+  left: 0.5em;
+}
+button#mode {
+  right: 1.5em;
 }
