@@ -14,7 +14,7 @@
   --nav: #36b;
   --prp: #639;
 
-  --bgOpacity: 0.15;
+  --bgOpacity: 0.2;
 }
 
 * {
@@ -64,9 +64,11 @@ html {
   }
   .balance { text-wrap: balance }
 
+  opacity: 1;
   transition: opacity ease-in-out 1s;
   .hide {
     opacity: 0;
+    transition: opacity ease-in-out 1s;
   }
 
   .mgn {background-color: hsl(from var(--mgn) h s l / var(--bgOpacity)) }
