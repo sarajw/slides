@@ -63,9 +63,10 @@ html {
     place-content: center;
   }
   .balance { text-wrap: balance }
+
+  transition: opacity ease-in-out 1s;
   .hide {
     opacity: 0;
-    transition: opacity ease-in-out 1s;
   }
 
   .mgn {background-color: hsl(from var(--mgn) h s l / var(--bgOpacity)) }
