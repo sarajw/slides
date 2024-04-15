@@ -14,7 +14,7 @@
   --nav: #36b;
   --prp: #639;
 
-  --bgOpacity: 0.2;
+  --bgOpacity: 15%;
 }
 
 * {
@@ -64,25 +64,27 @@ html {
   }
   .balance { text-wrap: balance }
 
-  opacity: 1;
-  transition: opacity ease-in-out 1s;
   .hide {
     opacity: 0;
-    transition: opacity ease-in-out 1s;
+    transition: opacity ease-in-out 0.25s;
+  }
+  .reveal {
+    opacity: 1;
+    transition: opacity ease-in-out 0.5s;
   }
 
-  .mgn {background-color: hsl(from var(--mgn) h s l / var(--bgOpacity)) }
-  .pch {background-color: hsl(from var(--pch) h s l / var(--bgOpacity)) }
-  .red {background-color: hsl(from var(--red) h s l / var(--bgOpacity)) }
-  .orn {background-color: hsl(from var(--orn) h s l / var(--bgOpacity)) }
-  .ylw {background-color: hsl(from var(--ylw) h s l / var(--bgOpacity)) }
-  .lim {background-color: hsl(from var(--lim) h s l / var(--bgOpacity)) }
-  .grn {background-color: hsl(from var(--grn) h s l / var(--bgOpacity)) }
-  .tqs {background-color: hsl(from var(--tqs) h s l / var(--bgOpacity)) }
-  .sky {background-color: hsl(from var(--sky) h s l / var(--bgOpacity)) }
-  .blu {background-color: hsl(from var(--blu) h s l / var(--bgOpacity)) }
-  .nav {background-color: hsl(from var(--nav) h s l / var(--bgOpacity)) }
-  .prp {background-color: hsl(from var(--prp) h s l / var(--bgOpacity)) }
+  .mgn { background-color: color-mix(in srgb, var(--mgn) var(--bgOpacity), Canvas) }
+  .pch { background-color: color-mix(in srgb, var(--pch) var(--bgOpacity), Canvas) }
+  .red { background-color: color-mix(in srgb, var(--red) var(--bgOpacity), Canvas) }
+  .orn { background-color: color-mix(in srgb, var(--orn) var(--bgOpacity), Canvas) }
+  .ylw { background-color: color-mix(in srgb, var(--ylw) var(--bgOpacity), Canvas) }
+  .lim { background-color: color-mix(in srgb, var(--lim) var(--bgOpacity), Canvas) }
+  .grn { background-color: color-mix(in srgb, var(--grn) var(--bgOpacity), Canvas) }
+  .tqs { background-color: color-mix(in srgb, var(--tqs) var(--bgOpacity), Canvas) }
+  .sky { background-color: color-mix(in srgb, var(--sky) var(--bgOpacity), Canvas) }
+  .blu { background-color: color-mix(in srgb, var(--blu) var(--bgOpacity), Canvas) }
+  .nav { background-color: color-mix(in srgb, var(--nav) var(--bgOpacity), Canvas) }
+  .prp { background-color: color-mix(in srgb, var(--prp) var(--bgOpacity), Canvas) }
 }
 
 button:is(#show, #mode) {

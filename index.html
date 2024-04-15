@@ -154,19 +154,47 @@
 			document.querySelector("html").classList.toggle("show");
 		}
 
-		let reveal = 0;
+
+		
+		const observer = new IntersectionObserver(revelations => {
+			revelations.forEach(revelation => {
+				if(revelation.isIntersecting) {
+					revelation.target.classList.add("in-viewport");
+				} else {
+					revelation.target.classList.remove("in-viewport");
+				}
+			})
+		}, { threshold: 1 })
+
+		let reveal = 1;
+
 		document.addEventListener("keyup", (event) => {
-			if (event.key === "n" || event.key === "ArrowRight") {
-				reveal++;
-			document.getElementById(reveal)?.classList.remove("hide");
+			const element = document.getElementById(reveal);
+
+			const hiddenElements = document.querySelectorAll(".hide, .reveal");
+			for (const hiddenElement of hiddenElements) {
+				observer.observe(hiddenElement);
 			}
-			if (event.key === "b" || event.key === "ArrowLeft") {
-			document.getElementById(reveal)?.classList.add("hide");
+			
+			const viewportElements = document.getElementsByClassName("in-viewport").length;
+
+			if(!element) return;
+
+			if (event.key === "ArrowRight" && element.classList.contains("in-viewport")) {
+				element.classList.remove("hide");
+				element.classList.add("reveal");
+				reveal++;
+			}
+			if (event.key === "ArrowLeft" && element.classList.contains("in-viewport")) {
+				element.classList.remove("reveal");
+				element.classList.add("hide");
 				reveal--;
 			}
-			if (reveal < 0) reveal = 0;
-			if (reveal > 0) console.log(reveal);
+			if (reveal < 1) reveal = 1;
+			if (reveal > hiddenElements.length) reveal = hiddenElements.length;
+			
 		});
+
 		</script>
 	</body>
 </html>
