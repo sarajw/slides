@@ -9,121 +9,124 @@
 	</head>
 	<body>
 		<main>
-			<div id="slide1" class="title centerblock center mgn">
-				<h1>why not both?</h1>
-				<p class="balance">Or, why building both dark and light schemes together is easy, actually.</p>
+			<div id="title" class="title centerblock center mgn">
+				<h1>why not both? 🤔</h1>
+				<p class="hide balance">Or, why building both dark and light schemes together is easy, actually.</p>
+				<p class="hide balance">And, adding low and high contrast themes is easy too ^_^</p>
 			</div>
 
-			<div id="slide2" class="red">
+			<div id="intro" class="red">
 				<h2>hello! 👋</h2>
 				<div>
-					<p>Sara Joy here.</p>
-					<p id="1" class="hide">I'm both:</p>
-					<p id="2" class="hide"> an old hand
-						<br><i>(built my first websites as a teen in 1999)</i></p>
-					<p id="3" class="hide"> and a newbie
-						<br><i>(swiched career from general small-company engineering into web development in 2022)</i></p>
+					<img src="images/cartoon.png" alt="a cartoon avatar of me by Andy Carolan">
+					<p>Sara Joy here. <span class="hide">I'm both:</span></p>
+					<ul>
+						<li class="hide"> an old hand 👌
+						<br><i>(built websites as a teen from 1999)</i></li>
+						<li class="hide"> and a newbie 🤯
+						<br><i>(switched career from small-company general engineering into web dev in 2022)</i></li>
+					</ul>
 				</div>
 			</div>
 
-			<div id="slide3" class="pch">
+			<div class="pch">
 				<h2>dark mode vs. light mode</h2>
 				<div>
 					<p>We all love a good polarising argument!</p>
-					<p id="4" class="hide">But there are valid reasons to prefer one over the other.</p>
-					<p id="5" class="hide">Also, you're allowed to just like light or dark websites better, for no good reason!</p>
-					<p id="6" class="hide">Your eyes, your choice! <span id="7" class="hide">👀</span></p>
+					<p class="hide">But there are valid reasons to prefer one over the other.</p>
+					<p class="hide balance">Also, you're allowed to just like light or dark websites better, for no good reason!</p>
+					<p class="hide">Your eyes, your choice! <span id="7" class="hide">👀</span></p>
 				</div>
 			</div>
 
-			<div id="slide4" class="orn">
+			<div class="orn">
 				<h2>why dark mode?</h2>
 				<div>
-					<p>Content text here</p>
+					<p>Feelings of eye strain, floaters, preference</p>
 				</div>
 			</div>
 
-			<div id="slide5" class="ylw">
+			<div class="ylw">
 				<h2>why light mode?</h2>
 				<div>
-					<p>Content text here</p>
+					<p>Astigmatism, eye strain, easier to focus (smaller pupil)</p>
 				</div>
 			</div>
 
-			<div id="slide6" class="lim">
+			<div class="lim">
 				<h2>why not both?</h2>
 				<div>
-					<p>Content text here</p>
+					<p>GOOD QUESTION</p>
 				</div>
 			</div>
 
-			<div id="slide7" class="grn">
+			<div class="grn">
 				<h2>this talk's scope</h2>
 				<div>
-					<p>Content text here</p>
+					<p>not got time to discuss toggles - all about preference from OS</p>
 				</div>
 			</div>
 
-			<div id="slide8" class="tqs">
+			<div class="tqs">
 				<h2>starting from scratch</h2>
 				<div>
-					<p>Content text here</p>
+					<p>no styles, no problem</p>
 				</div>
 			</div>
 
-			<div id="slide9" class="sky">
+			<div class="sky">
 				<h2>default HTML themes</h2>
 				<div>
-					<p>Content text here</p>
+					<p>dark and light</p>
 				</div>
 			</div>
 
-			<div id="slide10" class="blu">
+			<div class="blu">
 				<h2>color-scheme</h2>
 				<div>
-					<p>Content text here</p>
+					<p>meta tag in head</p>
 				</div>
 			</div>
 
-			<div id="slide11" class="nav">
+			<div class="nav">
 				<h2>system colors</h2>
 				<div>
-					<p>Content text here</p>
+					<p>canvas, canvastext, others</p>
 				</div>
 			</div>
 
-			<div id="slide12" class="prp">
+			<div class="prp">
 				<h2>contrast too high?</h2>
 				<div>
-					<p>Content text here</p>
+					<p>allow for prefers-contrast</p>
 				</div>
 			</div>
 
-			<div id="slide13" class="mgn">
+			<div class="mgn">
 				<h2>other colours</h2>
 				<div>
 					<p>color-mix, relative colors, filtering</p>
 				</div>
 			</div>
 
-			<div id="slide14" class="red">
+			<div class="red">
 				<h2>prefers-color-scheme</h2>
 				<div>
-					<p>Content text here</p>
+					<p>use this alongside color-scheme</p>
 				</div>
 			</div>
 
-			<div id="slide15" class="pch">
+			<div class="pch">
 				<h2>light-dark()</h2>
 				<div>
-					<p>Content text here</p>
+					<p>even easier!</p>
 				</div>
 			</div>
 
-			<div id="slide16" class="orn">
+			<div class="orn">
 				<h2>takeaway - offer choice</h2>
 				<div>
-					<p>Content text here</p>
+					<p>two toggles, done! [make a nice grid]</p>
 				</div>
 			</div>
 		</main>
@@ -154,45 +157,50 @@
 			document.querySelector("html").classList.toggle("show");
 		}
 
+		// const observer = new IntersectionObserver(revelations => {
+		// 	revelations.forEach(revelation => {
+		// 		if(revelation.isIntersecting) {
+		// 			revelation.target.classList.add("in-viewport");
+		// 		} else {
+		// 			revelation.target.classList.remove("in-viewport");
+		// 		}
+		// 	})
+		// }, { threshold: 1 })
 
-		
-		const observer = new IntersectionObserver(revelations => {
-			revelations.forEach(revelation => {
-				if(revelation.isIntersecting) {
-					revelation.target.classList.add("in-viewport");
-				} else {
-					revelation.target.classList.remove("in-viewport");
-				}
-			})
-		}, { threshold: 1 })
-
-		let reveal = 1;
+		let reveal = 0;
+		const hiddenElements = document.querySelectorAll(".hide, .reveal");
 
 		document.addEventListener("keyup", (event) => {
-			const element = document.getElementById(reveal);
 
-			const hiddenElements = document.querySelectorAll(".hide, .reveal");
-			for (const hiddenElement of hiddenElements) {
-				observer.observe(hiddenElement);
-			}
+			// for (const hiddenElement of hiddenElements) {
+			// 	observer.observe(hiddenElement);
+			// }
 			
-			const viewportElements = document.getElementsByClassName("in-viewport").length;
+			// const hiddenElementsInVP = document.querySelectorAll(".in-viewport");
 
+			// if (event.key === "ArrowDown") {
+			// 	setTimeout(() => reveal = hiddenElementsInVP[0]?.id ?? reveal, 250);
+			// } 
+			// if (event.key === "ArrowUp") {
+			// 	setTimeout(() => reveal = hiddenElementsInVP[hiddenElementsInVP.length - 1]?.id ?? reveal, 250);
+			// } 
+
+			const element = hiddenElements[reveal];
 			if(!element) return;
 
-			if (event.key === "ArrowRight" && element.classList.contains("in-viewport")) {
+			if (event.key === "ArrowRight") {
 				element.classList.remove("hide");
 				element.classList.add("reveal");
 				reveal++;
 			}
-			if (event.key === "ArrowLeft" && element.classList.contains("in-viewport")) {
+			if (event.key === "ArrowLeft") {
 				element.classList.remove("reveal");
 				element.classList.add("hide");
 				reveal--;
 			}
-			if (reveal < 1) reveal = 1;
-			if (reveal > hiddenElements.length) reveal = hiddenElements.length;
-			
+			if (reveal < 0) reveal = 0;
+			if (reveal > hiddenElements.length - 1) reveal = hiddenElements.length - 1;
+			console.log(reveal)
 		});
 
 		</script>

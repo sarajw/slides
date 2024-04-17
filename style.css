@@ -14,7 +14,7 @@
   --nav: #36b;
   --prp: #639;
 
-  --bgOpacity: 15%;
+  --bgOpacity: 25%;
 }
 
 * {
@@ -28,7 +28,7 @@ html {
 
 .show {
   body {
-    font-size: 2rem;
+    font-size: 3vw;
     margin: 0
   }
 
@@ -42,19 +42,27 @@ html {
   main > div {
     height: 100vh;
     width: 100%;
+    padding-inline: 5vh;
     scroll-snap-align: start;
-    padding: 2rem;
     &:not(:last-child) {
         margin-bottom: 1rem;
     }
   }
   h2 {
-    height: 4rem;
+    height: 15vh;
+    line-height: 15vh;
     text-align: center;
+    margin: 0;
   }
   main > div > div {
-    height: calc( 100vh - 4rem );
-    width: 100%;
+    background-color: color-mix(in srgb, Gray 10%, Canvas);
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    /* margin-inline: auto; */
+    height: 80vh;
+  }
+  li {
+    margin-block: 2rem;
   }
 
   .center { text-align: center }
@@ -100,4 +108,10 @@ button#show {
 }
 button#mode {
   right: 1.5em;
+}
+
+#intro img {
+  float: right;
+  width: 40%;
+  margin: 5vh -5vh 0;
 }
