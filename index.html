@@ -88,6 +88,14 @@
 				</div>
 			</div>
 
+			<div>
+				<iframe scrolling="no" title="11tyConf 1" src="https://codepen.io/sarajw/embed/LYvgxaZ?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+					See the Pen <a href="https://codepen.io/sarajw/pen/LYvgxaZ">
+					11tyConf 1</a> by Sara (<a href="https://codepen.io/sarajw">@sarajw</a>)
+					on <a href="https://codepen.io">CodePen</a>.
+				</iframe>
+			</div>
+
 			<div class="nav">
 				<h2>system colors</h2>
 				<div>
@@ -157,35 +165,52 @@
 			document.querySelector("html").classList.toggle("show");
 		}
 
-		// const observer = new IntersectionObserver(revelations => {
-		// 	revelations.forEach(revelation => {
-		// 		if(revelation.isIntersecting) {
-		// 			revelation.target.classList.add("in-viewport");
-		// 		} else {
-		// 			revelation.target.classList.remove("in-viewport");
-		// 		}
-		// 	})
-		// }, { threshold: 1 })
+		const observer = new IntersectionObserver(revelations => {
+			revelations.forEach(revelation => {
+				if(revelation.isIntersecting) {
+					revelation.target.classList.add("in-viewport");
+				} else {
+					revelation.target.classList.remove("in-viewport");
+				}
+			})
+		}, { threshold: 1 })
 
 		let reveal = 0;
 		const hiddenElements = document.querySelectorAll(".hide, .reveal");
+		for (const element of hiddenElements) {
+			observer.observe(element)
+		}
+		let hiddenElementsInVP = document.querySelectorAll(".in-viewport");
 
 		document.addEventListener("keyup", (event) => {
+			setTimeout( () => {
 
-			// for (const hiddenElement of hiddenElements) {
-			// 	observer.observe(hiddenElement);
-			// }
+			if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+				for (const element of hiddenElements) {
+					observer.observe(element)
+				}
 			
-			// const hiddenElementsInVP = document.querySelectorAll(".in-viewport");
+				hiddenElementsInVP = document.querySelectorAll(".in-viewport");
+				console.log(hiddenElementsInVP);
 
-			// if (event.key === "ArrowDown") {
-			// 	setTimeout(() => reveal = hiddenElementsInVP[0]?.id ?? reveal, 250);
-			// } 
-			// if (event.key === "ArrowUp") {
-			// 	setTimeout(() => reveal = hiddenElementsInVP[hiddenElementsInVP.length - 1]?.id ?? reveal, 250);
-			// } 
+				if (event.key === "ArrowDown") {
+					for (const element of hiddenElementsInVP) {
+						element.classList.remove("reveal");
+						element.classList.add("hide");
+					}
+					reveal = 0;
+				} 
+				if (event.key === "ArrowUp") {
+					for (const element of hiddenElementsInVP) {
+						element.classList.remove("hide");
+						element.classList.add("reveal");
+					}
+					reveal = hiddenElementsInVP.length - 1;
+				} 
+			}
+		}, 250);
 
-			const element = hiddenElements[reveal];
+			const element = hiddenElementsInVP[reveal];
 			if(!element) return;
 
 			if (event.key === "ArrowRight") {
@@ -199,7 +224,7 @@
 				reveal--;
 			}
 			if (reveal < 0) reveal = 0;
-			if (reveal > hiddenElements.length - 1) reveal = hiddenElements.length - 1;
+			if (reveal > hiddenElementsInVP.length - 1) reveal = hiddenElementsInVP.length - 1;
 			console.log(reveal)
 		});
 
