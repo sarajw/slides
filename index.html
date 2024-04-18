@@ -29,6 +29,13 @@
 				</div>
 			</div>
 
+			<div id="warning">
+				<h2>a warning</h2>
+				<div>
+					<p>The nature of this topic will bring some abrupt changes between dark and light modes.</p>
+				</div>
+			</div>
+
 			<div id="versus">
 				<h2>dark mode vs. light mode</h2>
 				<div>
@@ -147,9 +154,9 @@
 		<button id="mode" onClick="modeSwitcher()">Auto Mode</button>
 
 		<script>
+		const mode = document.querySelector('meta[name="color-scheme"]');
+		const button = document.getElementById("mode");
 		function modeSwitcher() {
-			const mode = document.querySelector('meta[name="color-scheme"]');
-			const button = document.getElementById("mode");
 			if (mode.getAttribute("content") === "light dark") {
 				mode.setAttribute("content", "light");
 				button.innerText = "Light Mode";
@@ -165,6 +172,14 @@
 				button.innerText = "Auto Mode";
 				return;
 			}
+		}
+		if(window.location.href.endsWith('light')) {
+			mode.setAttribute("content", "light");
+			button.innerText = "Light Mode";
+		}
+		if(window.location.href.endsWith('dark')) {
+			mode.setAttribute("content", "dark");
+			button.innerText = "Dark Mode";
 		}
 
 		function slideshowToggle() {
