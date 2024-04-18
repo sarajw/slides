@@ -11,7 +11,7 @@
   --tqs: #2cb;
   --sky: #0bc;
   --blu: #09c;
-  --nav: #36b;
+  --ind: #36b;
   --prp: #639;
 
   --bgOpacity: 25%;
@@ -58,7 +58,6 @@ html {
     background-color: color-mix(in srgb, Gray 10%, Canvas);
     border-radius: 2rem;
     padding: 1rem 3rem;
-    /* margin-inline: auto; */
     height: 80vh;
   }
   li {
@@ -71,6 +70,7 @@ html {
     width: 50%;
     height: 45%;
     scale: 2;
+    border-radius: 1rem;
   }
 
   .center { text-align: center }
@@ -89,18 +89,24 @@ html {
     transition: opacity ease-in-out 0.5s;
   }
 
-  .mgn { background-color: color-mix(in srgb, var(--mgn) var(--bgOpacity), Canvas) }
-  .pch { background-color: color-mix(in srgb, var(--pch) var(--bgOpacity), Canvas) }
-  .red { background-color: color-mix(in srgb, var(--red) var(--bgOpacity), Canvas) }
-  .orn { background-color: color-mix(in srgb, var(--orn) var(--bgOpacity), Canvas) }
-  .ylw { background-color: color-mix(in srgb, var(--ylw) var(--bgOpacity), Canvas) }
-  .lim { background-color: color-mix(in srgb, var(--lim) var(--bgOpacity), Canvas) }
-  .grn { background-color: color-mix(in srgb, var(--grn) var(--bgOpacity), Canvas) }
-  .tqs { background-color: color-mix(in srgb, var(--tqs) var(--bgOpacity), Canvas) }
-  .sky { background-color: color-mix(in srgb, var(--sky) var(--bgOpacity), Canvas) }
-  .blu { background-color: color-mix(in srgb, var(--blu) var(--bgOpacity), Canvas) }
-  .nav { background-color: color-mix(in srgb, var(--nav) var(--bgOpacity), Canvas) }
-  .prp { background-color: color-mix(in srgb, var(--prp) var(--bgOpacity), Canvas) }
+  .rainbow > *:nth-of-type(12n + 1) { background-color: color-mix(in srgb, var(--mgn) var(--bgOpacity), Canvas) }
+  .rainbow > *:nth-of-type(12n + 2) { background-color: color-mix(in srgb, var(--red) var(--bgOpacity), Canvas) }
+  .rainbow > *:nth-of-type(12n + 3) { background-color: color-mix(in srgb, var(--pch) var(--bgOpacity), Canvas) }
+  .rainbow > *:nth-of-type(12n + 4) { background-color: color-mix(in srgb, var(--orn) var(--bgOpacity), Canvas) }
+  .rainbow > *:nth-of-type(12n + 5) { background-color: color-mix(in srgb, var(--ylw) var(--bgOpacity), Canvas) }
+  .rainbow > *:nth-of-type(12n + 6) { background-color: color-mix(in srgb, var(--lim) var(--bgOpacity), Canvas) }
+  .rainbow > *:nth-of-type(12n + 7) { background-color: color-mix(in srgb, var(--grn) var(--bgOpacity), Canvas) }
+  .rainbow > *:nth-of-type(12n + 8) { background-color: color-mix(in srgb, var(--tqs) var(--bgOpacity), Canvas) }
+  .rainbow > *:nth-of-type(12n + 9) { background-color: color-mix(in srgb, var(--sky) var(--bgOpacity), Canvas) }
+  .rainbow > *:nth-of-type(12n + 10) { background-color: color-mix(in srgb, var(--blu) var(--bgOpacity), Canvas) }
+  .rainbow > *:nth-of-type(12n + 11) { background-color: color-mix(in srgb, var(--ind) var(--bgOpacity), Canvas) }
+  .rainbow > *:nth-of-type(12n + 12) { background-color: color-mix(in srgb, var(--prp) var(--bgOpacity), Canvas) }
+
+  #intro img {
+    float: right;
+    width: 40%;
+    margin: 5vh -5vh 0;
+  }
 }
 
 button:is(#show, #mode) {
@@ -116,10 +122,4 @@ button#show {
 }
 button#mode {
   right: 1.5em;
-}
-
-#intro img {
-  float: right;
-  width: 40%;
-  margin: 5vh -5vh 0;
 }

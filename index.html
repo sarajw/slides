@@ -8,17 +8,17 @@
 		<title>Slideshow</title>
 	</head>
 	<body>
-		<main>
+		<main class="rainbow">
 			<div id="title" class="title centerblock center mgn">
 				<h1>why not both? 🤔</h1>
 				<p class="hide balance">Or, why building both dark and light schemes together is easy, actually.</p>
 				<p class="hide balance">And, adding low and high contrast themes is easy too ^_^</p>
 			</div>
 
-			<div id="intro" class="red">
+			<div id="intro">
 				<h2>hello! 👋</h2>
 				<div>
-					<img src="images/cartoon.png" alt="a cartoon avatar of me by Andy Carolan">
+					<img width="200" src="images/cartoon.png" alt="a cartoon avatar of me by Andy Carolan">
 					<p>Sara Joy here. <span class="hide">I'm both:</span></p>
 					<ul>
 						<li class="hide"> an old hand 👌
@@ -29,7 +29,7 @@
 				</div>
 			</div>
 
-			<div class="pch">
+			<div id="versus">
 				<h2>dark mode vs. light mode</h2>
 				<div>
 					<p>We all love a good polarising argument!</p>
@@ -39,107 +39,113 @@
 				</div>
 			</div>
 
-			<div class="orn">
+			<div id="ydark">
 				<h2>why dark mode?</h2>
 				<div>
 					<p>Feelings of eye strain, floaters, preference</p>
 				</div>
 			</div>
 
-			<div class="ylw">
+			<div id="ylight">
 				<h2>why light mode?</h2>
 				<div>
 					<p>Astigmatism, eye strain, easier to focus (smaller pupil)</p>
 				</div>
 			</div>
 
-			<div class="lim">
+			<div id="both">
 				<h2>why not both?</h2>
 				<div>
 					<p>GOOD QUESTION</p>
 				</div>
 			</div>
 
-			<div class="grn">
+			<div id="scope">
 				<h2>this talk's scope</h2>
 				<div>
 					<p>not got time to discuss toggles - all about preference from OS</p>
 				</div>
 			</div>
 
-			<div class="tqs">
+			<div id="scratch">
 				<h2>starting from scratch</h2>
 				<div>
 					<p>no styles, no problem</p>
 				</div>
 			</div>
 
-			<div class="sky">
+			<div id="themes">
 				<h2>default HTML themes</h2>
 				<div>
 					<p>dark and light</p>
 				</div>
 			</div>
 
-			<div class="blu">
+			<div id="scheme">
 				<h2>color-scheme</h2>
 				<div>
 					<p>meta tag in head</p>
 				</div>
 			</div>
 
-			<div>
-				<iframe scrolling="no" title="11tyConf 1" src="https://codepen.io/sarajw/embed/LYvgxaZ?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-					See the Pen <a href="https://codepen.io/sarajw/pen/LYvgxaZ">
-					11tyConf 1</a> by Sara (<a href="https://codepen.io/sarajw">@sarajw</a>)
-					on <a href="https://codepen.io">CodePen</a>.
-				</iframe>
+			<div id="codepen1">
+				<iframe scrolling="no" title="11tyConf 1" src="https://codepen.io/sarajw/embed/LYvgxaZ?default-tab=html%2Cresult&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>
 			</div>
 
-			<div class="nav">
+			<div id="system">
 				<h2>system colors</h2>
 				<div>
 					<p>canvas, canvastext, others</p>
 				</div>
 			</div>
 
-			<div class="prp">
+			<div id="contrast">
 				<h2>contrast too high?</h2>
 				<div>
 					<p>allow for prefers-contrast</p>
 				</div>
 			</div>
 
-			<div class="mgn">
+			<div id="colors">
 				<h2>other colours</h2>
 				<div>
 					<p>color-mix, relative colors, filtering</p>
 				</div>
 			</div>
 
-			<div class="red">
+			<div id="prefers">
 				<h2>prefers-color-scheme</h2>
 				<div>
 					<p>use this alongside color-scheme</p>
 				</div>
 			</div>
 
-			<div class="pch">
+			<div id="lightdark">
 				<h2>light-dark()</h2>
 				<div>
 					<p>even easier!</p>
 				</div>
 			</div>
 
-			<div class="orn">
-				<h2>takeaway - offer choice</h2>
+			<div id="choice">
+				<h2>takeaway: offer choice</h2>
 				<div>
 					<p>two toggles, done! [make a nice grid]</p>
 				</div>
 			</div>
+
+			<div id="further">
+				<h2>further reading</h2>
+				<div>
+					<p>references and deeper dives</p>
+				</div>
+			</div>
+
 		</main>
+
 		<button id="show" onClick="slideshowToggle()">Toggle Slideshow</button>
 		<button id="mode" onClick="modeSwitcher()">Auto Mode</button>
+
 		<script>
 		function modeSwitcher() {
 			const mode = document.querySelector('meta[name="color-scheme"]');
@@ -164,6 +170,7 @@
 		function slideshowToggle() {
 			document.querySelector("html").classList.toggle("show");
 		}
+		if(window.location.href.endsWith('doc')) document.querySelector("html").classList.remove("show");
 
 		const observer = new IntersectionObserver(revelations => {
 			revelations.forEach(revelation => {
@@ -184,33 +191,34 @@
 
 		document.addEventListener("keyup", (event) => {
 			setTimeout( () => {
+				if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+					for (const element of hiddenElements) {
+						observer.observe(element)
+					}
+				
+					hiddenElementsInVP = document.querySelectorAll(".in-viewport");
+					// console.log(hiddenElementsInVP);
 
-			if (event.key === "ArrowDown" || event.key === "ArrowUp") {
-				for (const element of hiddenElements) {
-					observer.observe(element)
+					if (event.key === "ArrowDown") {
+						for (const element of hiddenElementsInVP) {
+							element.classList.remove("reveal");
+							element.classList.add("hide");
+						}
+						reveal = 0;
+					} 
+					if (event.key === "ArrowUp") {
+						for (const element of hiddenElementsInVP) {
+							element.classList.remove("hide");
+							element.classList.add("reveal");
+						}
+						reveal = hiddenElementsInVP.length - 1;
+					} 
 				}
-			
-				hiddenElementsInVP = document.querySelectorAll(".in-viewport");
-				console.log(hiddenElementsInVP);
+			}, 250);
 
-				if (event.key === "ArrowDown") {
-					for (const element of hiddenElementsInVP) {
-						element.classList.remove("reveal");
-						element.classList.add("hide");
-					}
-					reveal = 0;
-				} 
-				if (event.key === "ArrowUp") {
-					for (const element of hiddenElementsInVP) {
-						element.classList.remove("hide");
-						element.classList.add("reveal");
-					}
-					reveal = hiddenElementsInVP.length - 1;
-				} 
-			}
-		}, 250);
-
+			hiddenElementsInVP = document.querySelectorAll(".in-viewport");
 			const element = hiddenElementsInVP[reveal];
+			// console.log(hiddenElementsInVP)
 			if(!element) return;
 
 			if (event.key === "ArrowRight") {
@@ -225,7 +233,7 @@
 			}
 			if (reveal < 0) reveal = 0;
 			if (reveal > hiddenElementsInVP.length - 1) reveal = hiddenElementsInVP.length - 1;
-			console.log(reveal)
+			// console.log(reveal)
 		});
 
 		</script>
