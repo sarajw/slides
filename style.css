@@ -39,7 +39,7 @@ html {
     height: 100vh;
   }
 
-  main > div {
+  article {
     height: 100vh;
     width: 100%;
     padding-inline: 5vh;
@@ -48,21 +48,36 @@ html {
         margin-bottom: 1rem;
     }
   }
+
   h2 {
     height: 15vh;
     line-height: 15vh;
     text-align: center;
     margin: 0;
   }
-  main > div > div {
+
+  article > div {
     background-color: color-mix(in srgb, Gray 10%, Canvas);
     border-radius: 2rem;
     padding: 1rem 3rem;
     height: 80vh;
   }
+
+  article > div:has(style) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-block: 3rem;
+    gap: 1rem;
+    div {
+      border-radius: 1rem;
+      padding: 0.5rem 2rem;
+    }
+  }
+
   li {
     margin-block: 2rem;
   }
+
   iframe {
     position: relative;
     top: 27.5%;
@@ -78,6 +93,7 @@ html {
     display: grid;
     place-content: center;
   }
+
   .balance { text-wrap: balance }
 
   .hide {
@@ -107,6 +123,13 @@ html {
     width: 40%;
     margin: 5vh -5vh 0;
   }
+}
+
+style {
+  font-family: monospace;
+  font-size: 0.8em;
+  display: block;
+  white-space: pre-wrap;
 }
 
 button:is(#show, #mode) {

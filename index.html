@@ -9,13 +9,13 @@
 	</head>
 	<body>
 		<main class="rainbow">
-			<div id="title" class="title centerblock center mgn">
+			<article id="title" class="title centerblock center mgn">
 				<h1>why not both? 🤔</h1>
 				<p class="hide balance">Or, why building both dark and light schemes together is easy, actually.</p>
 				<p class="hide balance">And, adding low and high contrast themes is easy too ^_^</p>
-			</div>
+			</article>
 
-			<div id="intro">
+			<article id="intro">
 				<h2>hello! 👋</h2>
 				<div>
 					<img width="200" src="images/cartoon.png" alt="a cartoon avatar of me by Andy Carolan">
@@ -27,16 +27,18 @@
 						<br><i>(switched career from small-company general engineering into web dev in 2022)</i></li>
 					</ul>
 				</div>
-			</div>
+			</article>
 
-			<div id="warning">
+			<article id="warning">
 				<h2>a warning</h2>
 				<div>
-					<p>The nature of this topic will bring some abrupt changes between dark and light modes.</p>
+					<p>There may be some abrupt changes between dark and light modes.</p>
+					<p>If you suffer from migraines, epilepsy, or strong astigmatism - I'm so sorry!</p>
+					<p>My hope is that with this information I'm about to present, the web will get more comfortable for you all.</p>
 				</div>
-			</div>
+			</article>
 
-			<div id="versus">
+			<article id="versus">
 				<h2>dark mode vs. light mode</h2>
 				<div>
 					<p>We all love a good polarising argument!</p>
@@ -44,113 +46,126 @@
 					<p class="hide balance">Also, you're allowed to just like light or dark websites better, for no good reason!</p>
 					<p class="hide">Your eyes, your choice! <span id="7" class="hide">👀</span></p>
 				</div>
-			</div>
+			</article>
 
-			<div id="ydark">
+			<article id="ydark">
 				<h2>why dark mode?</h2>
 				<div>
 					<p>Feelings of eye strain, floaters, preference</p>
 				</div>
-			</div>
+			</article>
 
-			<div id="ylight">
+			<article id="ylight">
 				<h2>why light mode?</h2>
 				<div>
 					<p>Astigmatism, eye strain, easier to focus (smaller pupil)</p>
 				</div>
-			</div>
+			</article>
 
-			<div id="both">
+			<article id="both">
 				<h2>why not both?</h2>
 				<div>
 					<p>GOOD QUESTION</p>
 				</div>
-			</div>
+			</article>
 
-			<div id="scope">
+			<article id="scope">
 				<h2>this talk's scope</h2>
 				<div>
 					<p>not got time to discuss toggles - all about preference from OS</p>
 				</div>
-			</div>
+			</article>
 
-			<div id="scratch">
+			<article id="scratch">
 				<h2>starting from scratch</h2>
 				<div>
 					<p>no styles, no problem</p>
 				</div>
-			</div>
+			</article>
 
-			<div id="themes">
+			<article id="themes">
 				<h2>default HTML themes</h2>
 				<div>
 					<p>dark and light</p>
 				</div>
-			</div>
+			</article>
 
-			<div id="scheme">
+			<article id="scheme">
 				<h2>color-scheme</h2>
 				<div>
 					<p>meta tag in head</p>
 				</div>
-			</div>
+			</article>
 
-			<div id="codepen1">
+			<article id="scheme-demo">
 				<iframe scrolling="no" title="11tyConf 1" src="https://codepen.io/sarajw/embed/LYvgxaZ?default-tab=html%2Cresult&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>
-			</div>
+			</article>
 
-			<div id="system">
+			<article id="system">
 				<h2>system colors</h2>
 				<div>
 					<p>canvas, canvastext, others</p>
 				</div>
-			</div>
+			</article>
 
-			<div id="contrast">
+			<article id="system-demo">
+				<h2>system colors</h2>
+				<div>
+					<style contenteditable="true">.system-demo {
+  color: Canvas;
+  background-color: CanvasText;
+}</style>
+					<div class="system-demo">
+						Hellooooooo!
+					</div>
+				</div>
+			</article>
+
+			<article id="contrast">
 				<h2>contrast too high?</h2>
 				<div>
 					<p>allow for prefers-contrast</p>
 				</div>
-			</div>
+			</article>
 
-			<div id="colors">
+			<article id="colors">
 				<h2>other colours</h2>
 				<div>
 					<p>color-mix, relative colors, filtering</p>
 				</div>
-			</div>
+			</article>
 
-			<div id="prefers">
+			<article id="prefers">
 				<h2>prefers-color-scheme</h2>
 				<div>
 					<p>use this alongside color-scheme</p>
 				</div>
-			</div>
+			</article>
 
-			<div id="lightdark">
+			<article id="lightdark">
 				<h2>light-dark()</h2>
 				<div>
 					<p>even easier!</p>
 				</div>
-			</div>
+			</article>
 
-			<div id="choice">
+			<article id="choice">
 				<h2>takeaway: offer choice</h2>
 				<div>
 					<p>two toggles, done! [make a nice grid]</p>
 				</div>
-			</div>
+			</article>
 
-			<div id="further">
+			<article id="further">
 				<h2>further reading</h2>
 				<div>
 					<p>references and deeper dives</p>
 				</div>
-			</div>
+			</article>
 
 		</main>
 
-		<button id="show" onClick="slideshowToggle()">Toggle Slideshow</button>
+		<button id="show" onClick="slideshowToggle()">Slideshow</button>
 		<button id="mode" onClick="modeSwitcher()">Auto Mode</button>
 
 		<script>
