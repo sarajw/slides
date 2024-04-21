@@ -32,9 +32,10 @@
 			<article id="warning">
 				<h2>a warning</h2>
 				<div>
-					<p>There may be some abrupt changes between dark and light modes.</p>
-					<p>If you suffer from migraines, epilepsy, or strong astigmatism - I'm so sorry!</p>
-					<p>My hope is that with this information I'm about to present, the web will get more comfortable for you all.</p>
+					<p>There'll some abrupt changes between dark and light modes.</p>
+					<p class="hide">If you suffer from migraines, epilepsy, or strong astigmatism
+						<br> - I'm really sorry! 😓</p>
+					<p class="hide">My hope is that with this information I'm about to present, browsing the web will get more comfortable for everyone.</p>
 				</div>
 			</article>
 
@@ -85,8 +86,119 @@
 
 			<article id="themes">
 				<h2>default HTML themes</h2>
-				<div>
-					<p>dark and light</p>
+				<div class="default">
+					<div>
+						<div>
+							<header>
+								<h1>Website name</h1>
+								<nav>
+									<ul>
+										<li><a href="/">Home</a></li>
+										<li><a href="#blog">Blog</a></li>
+										<li><a href="/contact">Contact</a></li>
+									</ul>
+								</nav>
+							</header>
+							<main>
+									<h2>Blog title</h2>
+									<article>
+										<h3>Blog post title</h3>
+										<p>Blog post content</p>
+									</article>
+									<aside>
+										<h4>By the Way:</h4>
+										<p>Interesting extra info</p>
+									</aside>
+									<h4>Comments</h4>
+									<article>First!</article>
+									<article>Great post!</article>
+									<article>Very informative!</article>
+							</main>
+							<footer>
+								<p>Copyright Me, 2022</p>
+							</footer>
+						</div>
+
+						<form>
+							<h3>What a nice form!</h3>
+							<label>text field
+								<br><input type="text" placeholder="Hellooo">
+							</label>
+							<br><br>
+							<label>
+								check box <input type="checkbox">
+							</label>
+							<br><br>
+							<label>
+								radio <input type="radio">
+							</label>
+							<br><br>
+							<label>
+								car brands: <select name="cars" id="cars">
+									<option value="volvo">Volvo</option>
+									<option value="saab">Saab</option>
+									<option value="mercedes">Mercedes</option>
+									<option value="audi">Audi</option>
+								</select>
+							</label>
+						</form>
+					</div>
+					<div>
+						<div>
+							<header>
+								<h1>Website name</h1>
+								<nav>
+									<ul>
+										<li><a href="/">Home</a></li>
+										<li><a href="#blog">Blog</a></li>
+										<li><a href="/contact">Contact</a></li>
+									</ul>
+								</nav>
+							</header>
+							<main>
+									<h2>Blog title</h2>
+									<article>
+										<h3>Blog post title</h3>
+										<p>Blog post content</p>
+									</article>
+									<aside>
+										<h4>By the Way:</h4>
+										<p>Interesting extra info</p>
+									</aside>
+									<h4>Comments</h4>
+									<article>First!</article>
+									<article>Great post!</article>
+									<article>Very informative!</article>
+							</main>
+							<footer>
+								<p>Copyright Me, 2022</p>
+							</footer>
+						</div>
+
+						<form>
+							<h3>What a nice form!</h3>
+							<label>text field
+								<br><input type="text" placeholder="Hellooo">
+							</label>
+							<br><br>
+							<label>
+								check box <input type="checkbox">
+							</label>
+							<br><br>
+							<label>
+								radio <input type="radio">
+							</label>
+							<br><br>
+							<label>
+								car brands: <select name="cars" id="cars">
+									<option value="volvo">Volvo</option>
+									<option value="saab">Saab</option>
+									<option value="mercedes">Mercedes</option>
+									<option value="audi">Audi</option>
+								</select>
+							</label>
+						</form>
+					</div>
 				</div>
 			</article>
 
@@ -104,19 +216,46 @@
 			<article id="system">
 				<h2>system colors</h2>
 				<div>
-					<p>canvas, canvastext, others</p>
-				</div>
-			</article>
-
-			<article id="system-demo">
-				<h2>system colors</h2>
-				<div>
 					<style contenteditable="true">.system-demo {
-  color: Canvas;
-  background-color: CanvasText;
+  color: CanvasText;
+  background-color: Canvas;
+	
+  color-scheme: light;
+
+  div {
+    color: Canvas;
+    background-color: CanvasText;
+  }
 }</style>
 					<div class="system-demo">
 						Hellooooooo!
+						<div>How are you?</div>
+					</div>
+				</div>
+			</article>
+
+			<article id="other-system">
+				<h2>other system colors</h2>
+				<div>
+					<style contenteditable="true" style="font-size: 0.6em">.system-demo2 {
+  p:nth-of-type(1) {
+    color: LinkText;
+  }
+  p:nth-of-type(2) {
+    color: ActiveText;
+  }
+  p:nth-of-type(3) {
+    color: VisitedText;
+  }
+  p:nth-of-type(4) {
+    background-color: ButtonFace;
+  }
+}</style>
+					<div class="system-demo2">
+						<p>How are you?</p>
+						<p>Yeah good, you?</p>
+						<p>Could be worse!</p>
+						<p>Nice weather, innit?</p>
 					</div>
 				</div>
 			</article>

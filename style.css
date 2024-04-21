@@ -127,7 +127,7 @@ html {
 
 style {
   font-family: monospace;
-  font-size: 0.8em;
+  font-size: 0.75em;
   display: block;
   white-space: pre-wrap;
 }
@@ -145,4 +145,32 @@ button#show {
 }
 button#mode {
   right: 1.5em;
+}
+
+#themes .default, 
+#themes .default > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 5vw;
+  color: CanvasText;
+  background-color: Canvas;
+}
+#themes .default {
+  > div {
+    border-radius: 1rem;
+    margin-block: 1.75rem;
+    padding: 0 1.5rem;
+  }
+  > div:first-child {
+    color-scheme: light;
+  }
+  > div:last-child {
+    color-scheme: dark;
+  }
+}
+#themes .default * {
+  all: revert;
+  font-size: 1.4vw;
+  font-family: initial;
+  line-height: 1.2;
 }
