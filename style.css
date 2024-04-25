@@ -29,31 +29,35 @@ html {
 .show {
   body {
     font-size: 3vw;
-    margin: 0
-  }
-
-  main {
-    scroll-snap-type: block mandatory;
-    scroll-snap-stop: always;
-    overflow-y: scroll;
-    height: 100vh;
-  }
-
-  article {
-    height: 100vh;
-    width: 100%;
-    padding-inline: 5vh;
-    scroll-snap-align: start;
-    &:not(:last-child) {
-        margin-bottom: 1rem;
-    }
-  }
-
-  h2 {
-    height: 15vh;
-    line-height: 15vh;
-    text-align: center;
     margin: 0;
+
+    > main {
+      scroll-snap-type: block mandatory;
+      scroll-snap-stop: always;
+      overflow-y: scroll;
+      height: 100vh;
+
+      > article {
+        height: 100vh;
+        width: 100%;
+        padding-inline: 5vh;
+        scroll-snap-align: start;
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        > h2 {
+          height: 15vh;
+          line-height: 15vh;
+          text-align: center;
+          margin: 0;
+        }
+
+        > li {
+          margin-block: 2rem;
+        }
+      }
+    }
   }
 
   article > div {
@@ -74,10 +78,6 @@ html {
     }
   }
 
-  li {
-    margin-block: 2rem;
-  }
-
   iframe {
     position: relative;
     top: 27.5%;
@@ -93,8 +93,8 @@ html {
     display: grid;
     place-content: center;
   }
-
   .balance { text-wrap: balance }
+  .small { font-size: 0.75em }
 
   .hide {
     opacity: 0;
@@ -123,11 +123,13 @@ html {
     width: 40%;
     margin: 5vh -5vh 0;
   }
+  style {
+    font-size: 0.75em;
+  }
 }
 
 style {
   font-family: monospace;
-  font-size: 0.75em;
   display: block;
   white-space: pre-wrap;
 }
@@ -169,7 +171,6 @@ button#mode {
   }
 }
 #themes .default * {
-  all: revert;
   font-size: 1.4vw;
   font-family: initial;
   line-height: 1.2;
