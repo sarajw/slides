@@ -51,21 +51,36 @@
 
 			<article id="ydark">
 				<h2>why dark mode?</h2>
-				<div>
-					<p>Feelings of eye strain, floaters, preference</p>
+				<div class="relative">
+					<p class="hide">Pupils constrict when coming across a bright page.</p>
+					<p class="hide">Too much contrast with dark surroundings.</p>
+					<p class="hide">Floaters appearing and distorting or blocking vision.</p>
+					<img width="200" class="hide" src="/images/floaters1.png" alt="A recreation of how floaters look in vision.">
+					<img width="200" class="hide" src="/images/floaters2.png" alt="Another recreation of how floaters look in vision.">
+					<img width="200" class="hide" src="/images/floaters3.png" alt="Yet another recreation, including text 'People with severe floaters struggle to read text like this.'">
 				</div>
 			</article>
 
 			<article id="ylight">
 				<h2>why light mode?</h2>
-				<div>
-					<p>Astigmatism, eye strain, easier to focus (smaller pupil)</p>
+				<div class="relative">
+					<p class="hide">Pupils constrict when coming across a bright page!</p>
+					<p class="hide">It's easier to focus when your pupil is smaller.</p>
+					<p class="hide">Astigmatism makes light text on dark backgrounds hard to read.</p>
+					<p class="hide shadow">Astigmatism makes light text on dark backgrounds hard to read.</p>
+					<img width="200" class="hide" src="/images/astigmatism1.png" alt="Recreation of dark mode showing the effects of strong astigmatism in one eye and in both eyes.">
+					<img width="200" class="hide" src="/images/astigmatism2.png" alt="Another recreation of astigmatism in dark mode.">
+					<img width="200" class="hide" src="/images/astigmatism3.png" alt="Another recreation of astigmatism in dark mode.">
+					<img width="200" class="hide" src="/images/astigmatism4.png" alt="Another recreation of astigmatism in dark mode.">
+					<img width="200" class="hide" src="/images/astigmatism5.png" alt="Another recreation of astigmatism in dark mode.">
+					<img width="200" class="hide" src="/images/astigmatism6.png" alt="Text 'I am the douche bag who makes people read white text on a black background.'">
+					<img width="200" class="hide" src="/images/astigmatism7.png" alt="Text 'I am the douche bag who makes people read white text on a black background.' - this time distorted.">
 				</div>
 			</article>
 
 			<article id="both">
 				<h2>why not both?</h2>
-				<div>
+				<div class="centerblock relative">
 					<div class="waviy hide">
 						<span style="--i:1">G</span><span style="--i:2">O</span><span style="--i:3">O</span><span style="--i:4">D</span>
 						<span style="--i:6">Q</span><span style="--i:7">U</span><span style="--i:8">E</span><span style="--i:9">S</span><span style="--i:10">T</span><span style="--i:11">I</span><span style="--i:12">O</span><span style="--i:13">N</span><span style="--i:14">!</span>
@@ -74,6 +89,7 @@
 					<p class="hide">Both.</p>
 					<p class="hide">Both is good.</p>
 					<p class="hide">*nods*</p>
+					<img width="200" class="hide" src="/images/eldorado.gif" alt="Miguel and Tulio from The Road to El Dorado waggling their eyebrows at each other.">
 				</div>
 			</article>
 
@@ -224,7 +240,17 @@
 			<article id="scheme">
 				<h2>color-scheme</h2>
 				<div>
-					<p>meta tag in head</p>
+					<p>You don't even need CSS for this!</p>
+					<pre class="hide">
+	<span class="comment">&lt;!-- in HTML --&gt;</span>
+	&lt;head&gt;
+	  &lt;meta name="color-scheme" content="light dark"&gt;
+	&lt;/head&gt;</pre>
+	<pre class="hide">
+	<span class="comment">/* In CSS: */</span>
+	:root <span class="comment">/* or html */</span> {
+	  color-scheme: light dark;
+	}</pre>
 				</div>
 			</article>
 
@@ -255,7 +281,7 @@
 
 			<article id="other-system">
 				<h2>other system colors 🙄</h2>
-				<div>
+				<div class="relative">
 					<style contenteditable="true">.system-demo2 {
   p:nth-of-type(1) {
     color: LinkText;
@@ -275,6 +301,7 @@
 						<p>It's lovely! Storm tomorrow though.</p>
 						<p><a href="https://notarealsite.com">Yay, I love storms!</a></p>
 					</div>
+					<img width="200" class="hide" style="z-index:-1" src="/images/firefox-system-colors.png" alt="screenshot of the same slide on FireFox">
 				</div>
 			</article>
 

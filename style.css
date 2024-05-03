@@ -1,5 +1,8 @@
 :root {
 
+  --bgColor: color-mix(in srgb, Gray 10%, Canvas);
+  --bgOpacity: 25%;
+
   /* https://iamkate.com/data/12-bit-rainbow/ */
   --mgn: #817;
   --red: #a35;
@@ -14,7 +17,6 @@
   --ind: #36b;
   --prp: #639;
 
-  --bgOpacity: 25%;
 }
 
 * {
@@ -53,17 +55,17 @@ html {
           margin: 0;
         }
 
-        > li {
-          margin-block: 2rem;
+        > div > ul > li {
+          margin-block: 3rem;
         }
       }
     }
   }
 
   article > div {
-    background-color: color-mix(in srgb, Gray 10%, Canvas);
+    background-color: var(--bgColor);
     border-radius: 1rem;
-    padding: 1rem 3rem;
+    padding: 1rem 5rem;
     height: 82.5vh;
   }
 
@@ -88,19 +90,36 @@ html {
     border-radius: 1rem;
   }
 
+  img {
+    border-radius: 1rem;
+  }
+
   .center { text-align: center }
   .centerblock {
     display: grid;
     place-content: center;
   }
+  .relative { position: relative }
   .balance { text-wrap: balance }
   .small { font-size: 0.75em }
+
+  .shadow {
+    position: relative;
+    top: -1.58lh;
+    left: 0.2rem;
+    filter: blur(0.1rem) opacity(0.5);
+  }
+  .comment {
+    opacity: 0.35;
+    font-style: italic;
+  }
 
   .hide {
     opacity: 0;
     transition: opacity ease-in-out 0.25s;
   }
   .reveal {
+    z-index: 0 !important;
     opacity: 1;
     transition: opacity ease-in-out 0.5s;
   }
@@ -123,34 +142,81 @@ html {
     width: 40%;
     margin: 5vh -5vh 0;
   }
-  style {
+  style, pre {
     font-size: 0.75em;
   }
 
-  #both > div {
-    position: relative;
-    display: grid;
-    place-content: center;
+  #ydark img {
+    position: absolute;
+    width: 28rem;
+    bottom: 3rem;
+    &:nth-of-type(1) {
+      left: 3rem;
+    }
+    &:nth-of-type(2) {
+      right: 3rem;
+    }
+    &:nth-of-type(3) {
+      left: 50%;
+      translate: -50%;
+      bottom: 1.5rem;
+    }
   }
+
+  #ylight img {
+    position: absolute;
+    &:nth-of-type(1) {
+      left: 3rem;
+      bottom: 3rem;
+      width: 30rem;
+    }
+    &:nth-of-type(2) {
+      top: 3rem;
+      right: 3rem;
+      width: 40rem;
+    }
+    &:nth-of-type(3) {
+      right: 3rem;
+      bottom: 3rem;
+      width: 60rem;
+    }
+    &:nth-of-type(4) {
+      top: 3rem;
+      left: 10rem;
+      width: 50rem;
+    }
+    &:nth-of-type(5) {
+      top: 20rem;
+      right: 6rem;
+      width: 50rem;
+    }
+    &:nth-of-type(n+6) {
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      width: 50rem;
+    }
+  }
+
   #both p {
     position: absolute;
     font-size: 5vw;
-  }
-  #both p:nth-of-type(1) {
-    bottom: 3vw;
-    left: 60vw;
-  }
-  #both p:nth-of-type(2) {
-    top: 1vw;
-    left: 10vw;
-  }
-  #both p:nth-of-type(3) {
-    bottom: 0;
-    left: 20vw;
-  }
-  #both p:nth-of-type(4) {
-    top: 0;
-    right: 10vw;
+    &:nth-of-type(1) {
+      bottom: 3vw;
+      left: 60vw;
+    }
+    &:nth-of-type(2) {
+      top: 1vw;
+      left: 10vw;
+    }
+    &:nth-of-type(3) {
+      bottom: 0;
+      left: 20vw;
+    }
+    &:nth-of-type(4) {
+      top: 0;
+      right: 10vw;
+    }
   }
   .waviy {
     position: relative;
@@ -163,6 +229,20 @@ html {
     text-transform: uppercase;
     animation: waviy 2s infinite;
     animation-delay: calc(0.1s  * var(--i));
+  }
+  #both img {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    translate: -50%;
+    width: auto;
+  }
+
+  #other-system img {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: auto;
   }
 }
 
@@ -201,14 +281,14 @@ button#mode {
   display: flex;
   justify-content: space-between;
   gap: 5vw;
-  color: CanvasText;
-  background-color: Canvas;
 }
 #themes .default {
   > div {
     border-radius: 1rem;
     margin-block: 1.75rem;
     padding: 0 1.5rem;
+    color: CanvasText;
+    background-color: Canvas;
   }
   > div:first-child {
     color-scheme: light;
