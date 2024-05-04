@@ -17,14 +17,15 @@
 
 			<article id="intro">
 				<h2>hello! 👋</h2>
-				<div>
+				<div class="relative">
 					<img width="200" src="images/cartoon.png" alt="a cartoon avatar of me by Andy Carolan">
 					<p>Sara Joy here. <span class="hide">I'm both:</span></p>
 					<ul>
 						<li class="hide"> an old hand 👌
 						<br><i>(built websites as a teen from 1999)</i></li>
 						<li class="hide"> and a newbie 🤯
-						<br><i>(switched career from small-company general engineering into web dev in 2022)</i></li>
+						<br><i>(switched career from small-company
+						<br>general engineering into web dev in 2022)</i></li>
 					</ul>
 				</div>
 			</article>
@@ -32,10 +33,10 @@
 			<article id="warning">
 				<h2>a warning</h2>
 				<div>
-					<p>There'll some abrupt changes between dark and light modes.</p>
+					<p>There'll some movement, animation, and abrupt changes between dark and light modes in this presentation.</p>
 					<p class="hide">If you suffer from migraines, epilepsy, or strong astigmatism
 						<br> - I'm really sorry! 😓</p>
-					<p class="hide">My hope is that with this information I'm about to present, browsing the web will get more comfortable for everyone.</p>
+					<p class="hide">My hope is that with the information I'm about to present, browsing the web will get ever more comfortable for everyone.</p>
 				</div>
 			</article>
 
@@ -43,8 +44,8 @@
 				<h2>dark mode vs. light mode</h2>
 				<div>
 					<p>We all love a good polarising argument!</p>
-					<p class="hide">But there are valid reasons to prefer one over the other.</p>
-					<p class="hide balance">Also, you're allowed to just like light or dark websites better, for no good reason!</p>
+					<p class="hide">But there are physical reasons to prefer one over the other.</p>
+					<p class="hide">Also, you're allowed to like light or dark themed websites better, for no good or logical reason!</p>
 					<p class="hide">Your eyes, your choice! <span id="7" class="hide">👀</span></p>
 				</div>
 			</article>
@@ -96,14 +97,28 @@
 			<article id="scope">
 				<h2>this talk's scope</h2>
 				<div>
-					<p>not got time to discuss toggles - all about preference from OS</p>
+					<div class="hide"><p>Includes:</p>
+						<ul>
+							<li>Having your site react to <code>prefers-color-scheme</code>.</li>
+						</ul>
+					</div>
+					<div class="hide"><p>Does not include:</p>
+						<ul>
+							<li>Manual toggling of <code>colour-scheme</code>.</li>
+						</ul>
+					</div>
+					<p class="hide">Very possible, with a bit of JS! But let's keep 🪱🪱🪱 ➡️ 🥫</p>
 				</div>
 			</article>
 
 			<article id="scratch">
 				<h2>starting from scratch</h2>
 				<div>
-					<p>no styles, no problem</p>
+					<p>No styles, no problem!</p>
+					<p class="hide">However...</p>
+					<p class="hide">Building this into a mature site or design system may be tricky.</p>
+					<p class="hide">Harder still if everything already has specific colours assigned.</p>
+					<p class="hide">Keep it in mind for the next time that you start a new project 🌱</p>
 				</div>
 			</article>
 
@@ -138,7 +153,7 @@
 									<article>Very informative!</article>
 							</main>
 							<footer>
-								<p>Copyright Me, 2022</p>
+								<p>Copyright Me, 2024</p>
 							</footer>
 						</div>
 
@@ -200,7 +215,7 @@
 									<article>Very informative!</article>
 							</main>
 							<footer>
-								<p>Copyright Me, 2022</p>
+								<p>Copyright Me, 2024</p>
 							</footer>
 						</div>
 
@@ -308,14 +323,15 @@
 			<article id="contrast">
 				<h2>contrast too high?</h2>
 				<div>
-					<p>allow for prefers-contrast</p>
+					<p>can be a problem for some migraineurs</p>
+					<p>allow for prefers-contrast - simplest way is with a filter</p>
 				</div>
 			</article>
 
 			<article id="colors">
 				<h2>other colours</h2>
 				<div>
-					<p>color-mix, relative colors, filtering</p>
+					<p>color-mix, relative colors?, filtering</p>
 				</div>
 			</article>
 
@@ -344,6 +360,18 @@
 				<h2>further reading</h2>
 				<div>
 					<p>references and deeper dives</p>
+				</div>
+			</article>
+
+			<article id="thankyou">
+				<h2>thank you!</h2>
+				<div>
+					<p>I'm so honoured to be taking part in the 11ty Conference!</p>
+					<p>Huge thanks to the 11tyConf Crew: Zach, Olivia, Mike and David.</p>
+					<p class="center">
+					<br>🙏💖🎈</p>
+					<p class="right">🏠 <a href="https://sarajoy.dev">sarajoy.dev</a>
+						<br>👋 <a href="https://front-end.social/@sarajw">@sarajw@front-end.social</a></p>
 				</div>
 			</article>
 

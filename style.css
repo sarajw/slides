@@ -1,6 +1,7 @@
 :root {
 
   --bgColor: color-mix(in srgb, Gray 10%, Canvas);
+  /* --bgColor: hsl(from Canvas h s 10%); */
   --bgOpacity: 25%;
 
   /* https://iamkate.com/data/12-bit-rainbow/ */
@@ -16,7 +17,6 @@
   --blu: #09c;
   --ind: #36b;
   --prp: #639;
-
 }
 
 * {
@@ -94,6 +94,7 @@ html {
     border-radius: 1rem;
   }
 
+  .right { text-align: right }
   .center { text-align: center }
   .centerblock {
     display: grid;
@@ -138,9 +139,10 @@ html {
   .rainbow > *:nth-of-type(12n + 12) { background-color: color-mix(in srgb, var(--prp) var(--bgOpacity), Canvas) }
 
   #intro img {
-    float: right;
+    position: absolute;
     width: 40%;
-    margin: 5vh -5vh 0;
+    bottom: 0;
+    right: 0;
   }
   style, pre {
     font-size: 0.75em;
