@@ -64,11 +64,10 @@ html {
       margin-block: 3rem;
     }
   }
-
   article > div:has(style) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-block: 3rem;
+    padding: 2.5vw;
     gap: 1rem;
     div {
       border-radius: 1rem;
@@ -89,10 +88,6 @@ html {
   img {
     border-radius: 1rem;
   }
-
-  .light { color-scheme: light }
-  .dark { color-scheme: dark }
-  .lowcontrast { filter: contrast(0.5) }
 
   .right { text-align: right }
   .center { text-align: center }
@@ -228,9 +223,9 @@ html {
     font-size: 10vw;
   }
   .waviy span {
+    color: var(--rgb, CanvasText);
     position: relative;
     display: inline-block;
-    color: #fff;
     text-transform: uppercase;
     animation: waviy 2s infinite;
     animation-delay: calc(0.1s  * var(--i));
@@ -250,16 +245,23 @@ html {
     width: auto;
   }
 
-  #themes .default > div {
+  #themes .default {
+    padding-inline: 2.5vw;
+    > div {
     border-radius: 1rem;
     margin-block: 1.75rem;
     padding: 0 1.5rem;
+    }
     justify-content: space-between;
   }
   #themes .default * {
     font-size: 1.4vw;
     font-family: initial;
     line-height: 1.2;
+  }
+
+  #colors style {
+    font-size: 0.65em;
   }
 
   #choice table {
@@ -280,6 +282,10 @@ html {
     }
   }
 }
+
+.light { color-scheme: light }
+.dark { color-scheme: dark }
+.lowcontrast { filter: contrast(0.5) }
 
 @keyframes waviy {
   0%, 40%, 100% {

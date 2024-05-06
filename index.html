@@ -19,7 +19,7 @@
 				<h2>hello! 👋</h2>
 				<div class="relative">
 					<img width="200" src="images/cartoon.png" alt="a cartoon avatar of me by Andy Carolan">
-					<p>Sara Joy here. <span class="hide">I'm both:</span></p>
+					<p>Sara here. <span class="hide">I'm both:</span></p>
 					<ul>
 						<li class="hide"> an old hand 👌
 						<br><i>(built websites as a teen from 1999)</i></li>
@@ -83,8 +83,8 @@
 				<h2>why not both?</h2>
 				<div class="centerblock relative">
 					<div class="waviy hide">
-						<span style="--i:1">G</span><span style="--i:2">O</span><span style="--i:3">O</span><span style="--i:4">D</span>
-						<span style="--i:6">Q</span><span style="--i:7">U</span><span style="--i:8">E</span><span style="--i:9">S</span><span style="--i:10">T</span><span style="--i:11">I</span><span style="--i:12">O</span><span style="--i:13">N</span><span style="--i:14">!</span>
+						<span style="--i:1; --rgb:var(--mgn)">G</span><span style="--i:2; --rgb:var(--red)">O</span><span style="--i:3; --rgb:var(--pch)">O</span><span style="--i:4; --rgb:var(--orn)">D</span>
+						<span style="--i:6; --rgb:var(--ylw)">Q</span><span style="--i:7; --rgb:var(--lim)">U</span><span style="--i:8; --rgb:var(--grn)">E</span><span style="--i:9; --rgb:var(--tqs)">S</span><span style="--i:10; --rgb:var(--sky)">T</span><span style="--i:11; --rgb:var(--blu)">I</span><span style="--i:12; --rgb:var(--ind)">O</span><span style="--i:13; --rgb:var(--prp)">N</span><span style="--i:14; --rgb:var(--mgn)">!</span>
 					</div>
 					<p class="hide">Both!</p>
 					<p class="hide">Both.</p>
@@ -277,10 +277,10 @@
 				<h2>system colors</h2>
 				<div>
 					<style contenteditable="true">.system-demo {
+  color-scheme: light;
+
   color: CanvasText;
   background-color: Canvas;
-	
-  color-scheme: light;
 
   div {
     color: Canvas;
@@ -314,7 +314,7 @@
 						<p>Could be worse!</p>
 						<p><a href="https://sarajoy.dev">Nice weather, innit?</a></p>
 						<p>It's lovely! Storm tomorrow though.</p>
-						<p><a href="https://notarealsite.com">Yay, I love storms!</a></p>
+						<p><a href="https://notarealsite.com">Ooh I love a good storm!</a></p>
 					</div>
 					<img width="200" class="hide" style="z-index:-1" src="/images/firefox-system-colors.png" alt="screenshot of the same slide on FireFox">
 				</div>
@@ -323,15 +323,58 @@
 			<article id="contrast">
 				<h2>contrast too high?</h2>
 				<div>
-					<p>can be a problem for some migraineurs</p>
-					<p>allow for prefers-contrast - simplest way is with a filter</p>
+					<p>Those familiar with accessibility and WCAG may find this unlikely.</p>
+					<p class="hide">But some migraineurs do have trouble with this!</p>
+					<p class="hide">Alongside <code>prefers-color-scheme</code> there is also
+						<br><code>prefers-contrast</code>.</p>
+					<p class="hide">The simplest way to bring contrast down is with 
+						<br><code>filter: contrast()</code>.</p>
+				</div>
+			</article>
+
+			<article id="contrast-demo">
+				<h2>bringing down contrast</h2>
+				<div>
+					<style contenteditable="true">.contrast-demo {
+  color-scheme: light;
+  /* filter: contrast(0.5); */
+
+  color: CanvasText;
+  background-color: Canvas;
+  div {
+    color: Canvas;
+    background-color: CanvasText;
+  }
+}</style>
+					<div class="contrast-demo">
+						Hellooooooo!
+						<div>How are you?</div>
+					</div>
 				</div>
 			</article>
 
 			<article id="colors">
 				<h2>other colours</h2>
 				<div>
-					<p>color-mix, relative colors (not yet in all browsers), filtering</p>
+					<style contenteditable="true">.colors-demo {
+  p:nth-of-type(1) {
+    color: color-mix(in srgb, red, CanvasText);
+  }
+  p:nth-of-type(2) {
+    background-color: color-mix(in srgb, Teal, Canvas);
+  }
+  p:nth-of-type(3) {
+    background-color: #f0f4;
+  }
+}</style>
+					<div class="colors-demo">
+						<p>How are you?
+							<br>Yeah good, you?</p>
+						<p>Could be worse!
+							<br>Nice weather, innit?</p>
+						<p>It's lovely! Storm tomorrow.
+							<br>Ooh I love a good storm!</p>
+					</div>
 				</div>
 			</article>
 
