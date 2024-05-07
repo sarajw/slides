@@ -253,7 +253,7 @@
 			</article>
 
 			<article id="scheme">
-				<h2>color-scheme</h2>
+				<h2><code>color-scheme</code></h2>
 				<div>
 					<p>You don't even need CSS for this!</p>
 					<pre class="hide">
@@ -290,6 +290,8 @@
 					<div class="system-demo">
 						Hellooooooo!
 						<div>How are you?</div>
+						<p class="hide">You can apply <code>color-scheme</code> to most elements.
+						<br>But - they need to be assigned both a <code>color</code> and <code>background-color</code> first.</p>
 					</div>
 				</div>
 			</article>
@@ -323,7 +325,7 @@
 			<article id="contrast">
 				<h2>contrast too high?</h2>
 				<div>
-					<p>Those familiar with accessibility and WCAG may find this unlikely.</p>
+					<p>Those implementing WCAG for accessibility may find it unlikely.</p>
 					<p class="hide">But some migraineurs do have trouble with this!</p>
 					<p class="hide">Alongside <code>prefers-color-scheme</code> there is also
 						<br><code>prefers-contrast</code>.</p>
@@ -336,11 +338,13 @@
 				<h2>bringing down contrast</h2>
 				<div>
 					<style contenteditable="true">.contrast-demo {
-  color-scheme: light;
-  /* filter: contrast(0.5); */
-
   color: CanvasText;
   background-color: Canvas;
+
+  @media (prefers-contrast: less) {
+    filter: contrast(0.5);
+  }
+	
   div {
     color: Canvas;
     background-color: CanvasText;
@@ -349,6 +353,7 @@
 					<div class="contrast-demo">
 						Hellooooooo!
 						<div>How are you?</div>
+						<p class="hide lowcontrast">Ahh thanks, this calms my eyes and brain.</p>
 					</div>
 				</div>
 			</article>
@@ -357,13 +362,13 @@
 				<h2>other colours</h2>
 				<div>
 					<style contenteditable="true">.colors-demo {
-  p:nth-of-type(1) {
-    color: color-mix(in srgb, red, CanvasText);
+  p:nth-child(1) {
+    color: color-mix(in srgb, red 40%, CanvasText);
   }
-  p:nth-of-type(2) {
-    background-color: color-mix(in srgb, Teal, Canvas);
+  p:nth-child(2) {
+    background-color: color-mix(in srgb, Teal 60%, Canvas);
   }
-  p:nth-of-type(3) {
+  p:nth-child(3) {
     background-color: #f0f4;
   }
 }</style>
@@ -379,16 +384,54 @@
 			</article>
 
 			<article id="prefers">
-				<h2>prefers-color-scheme</h2>
+				<h2><code>prefers-color-scheme</code></h2>
 				<div>
-					<p>use this alongside color-scheme</p>
+					<style contenteditable="true">.prefers-demo {
+  p:nth-child(2) {
+    background-color: Indigo;
+    @media (prefers-color-scheme: light) {
+      background-color: Teal;
+    }
+  }
+  p:nth-child(3) {
+    background-color: #f0f4;
+    @media (prefers-color-scheme: light) {
+      background-color: #0f04;
+    }
+  }
+}</style>
+					<div class="prefers-demo">
+						<p>This follows OS preference,
+							<br>not <code>color-scheme</code> property.</p>
+						<p>How are you?
+							<br>Yeah good, you?</p>
+						<p>Could be worse!
+							<br>Nice weather, innit?</p>
+					</div>
 				</div>
 			</article>
 
 			<article id="lightdark">
-				<h2>light-dark()</h2>
+				<h2><code>light-dark()</code></h2>
 				<div>
-					<p>even easier! (not yet in all browsers)</p>
+					<style contenteditable="true">.lightdark-demo {
+  p:nth-child(2) {
+    background-color:
+      light-dark(Teal, Indigo);
+  }
+  p:nth-child(3) {
+    background-color:
+      light-dark(#0f04, #f0f4);
+  }
+}</style>
+					<div class="lightdark-demo">
+						<p>Not yet in all browsers,
+							<br>but soon - so exciting!</p>
+						<p>How are you?
+							<br>Yeah good, you?</p>
+						<p>Could be worse!
+							<br>Nice weather, innit?</p>
+					</div>
 				</div>
 			</article>
 
@@ -418,7 +461,10 @@
 			<article id="further">
 				<h2>further reading</h2>
 				<div>
-					<p>references and deeper dives</p>
+					<p><a href="https://sarajoy.dev/blog/color-scheme/">Do you know color-scheme?</a></p>
+					<p><a href="https://weblog.anniegreens.lol/2024/04/what-ive-learned-about-css-color-scheme-and-system-color">What I've learned about CSS <code>color-scheme</code> and friends.</a></p>
+					<p><a href="https://codepen.io/sarajw/pen/bGzeLZR">Can haz :has() !</a></p>
+					<p><a href="https://codepen.io/sarajw/pen/xxzyOMZ">Color-scheme Tinkering</a></p>
 				</div>
 			</article>
 

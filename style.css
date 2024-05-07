@@ -72,6 +72,10 @@ html {
     div {
       border-radius: 1rem;
       padding: 0.5rem 2rem;
+      p {
+        border-radius: 1rem;
+        padding-inline: 1rem;
+      }
     }
   }
 
@@ -260,8 +264,13 @@ html {
     line-height: 1.2;
   }
 
-  #colors style {
+  :is(#colors, #contrast-demo, #prefers) style {
     font-size: 0.65em;
+  }
+
+  .contrast-demo p {
+    color: CanvasText;
+    background-color: Canvas;
   }
 
   #choice table {
@@ -314,7 +323,8 @@ button#show {
   left: 0.5em;
 }
 button#mode {
-  right: 1.5em;
+  right: 1em;
+  font-size: 2rem;
 }
 
 #themes .default, 
