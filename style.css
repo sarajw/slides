@@ -290,6 +290,13 @@ html {
       vertical-align: middle;
     }
   }
+
+  #further p {
+    margin-block: 0.55em;
+  }
+  #further div {
+    padding-inline: 1.25em;
+  }
 }
 
 .light { color-scheme: light }
