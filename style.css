@@ -140,6 +140,16 @@ html {
   .rainbow > *:nth-of-type(12n + 11) { background-color: color-mix(in srgb, var(--ind) var(--bgOpacity), Canvas) }
   .rainbow > *:nth-of-type(12n + 12) { background-color: color-mix(in srgb, var(--prp) var(--bgOpacity), Canvas) }
 
+
+
+  .instructions {
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 1em;
+    font-size: 0.35em;
+  }
+
   #intro img {
     position: absolute;
     width: 40%;
