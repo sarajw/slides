@@ -2,7 +2,7 @@
 
   --bgColor: color-mix(in srgb, Gray 10%, Canvas);
   /* --bgColor: hsl(from Canvas h s 10%); */
-  --bgOpacity: 25%;
+  --bgOpacity: 35%;
 
   /* https://iamkate.com/data/12-bit-rainbow/ */
   --mgn: #817;
