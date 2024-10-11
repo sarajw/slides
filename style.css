@@ -81,12 +81,12 @@ html {
 
   iframe {
     position: relative;
-    top: 27.5%;
+    top: 26.5vh;
     left: 25%;
     width: 50%;
-    height: 45%;
+    height: 47.25vh;
     scale: 2;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
   }
 
   img {
@@ -143,6 +143,8 @@ html {
 
 
   .instructions {
+    display: none;
+    
     text-align: left;
     position: absolute;
     top: 0;
@@ -274,7 +276,7 @@ html {
     line-height: 1.2;
   }
 
-  :is(#colors, #contrast-demo, #prefers) style {
+  style.smallercode {
     font-size: 0.65em;
   }
 

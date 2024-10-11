@@ -106,15 +106,10 @@
 				<div>
 					<div class="hide"><p>Includes:</p>
 						<ul>
-							<li>Having your site react to <code>prefers-color-scheme</code>.</li>
+							<li class="hide">Having your site react to <code>prefers-color-scheme</code>.</li>
+							<li class="hide">Manual toggling of <code>colour-scheme</code>.</li>
 						</ul>
 					</div>
-					<div class="hide"><p>Does not include:</p>
-						<ul>
-							<li>Manual toggling of <code>colour-scheme</code>.</li>
-						</ul>
-					</div>
-					<p class="hide">Very possible, with a bit of JS! But let's keep 🪱🪱🪱 ➡️ 🥫</p>
 				</div>
 			</article>
 
@@ -277,7 +272,7 @@
 			</article>
 
 			<article id="scheme-demo">
-				<iframe scrolling="no" title="11tyConf 1" src="https://codepen.io/sarajw/embed/LYvgxaZ?default-tab=html%2Cresult&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>
+				<iframe scrolling="no" src="https://codepen.io/sarajw/embed/LYvgxaZ?default-tab=html%2Cresult&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>
 			</article>
 
 			<article id="system">
@@ -344,7 +339,7 @@
 			<article id="contrast-demo">
 				<h2>bringing down contrast</h2>
 				<div>
-					<style contenteditable="true">.contrast-demo {
+					<style class="smallercode" contenteditable="true">.contrast-demo {
   color: CanvasText;
   background-color: Canvas;
 
@@ -368,7 +363,7 @@
 			<article id="colors">
 				<h2>other colours</h2>
 				<div>
-					<style contenteditable="true">.colors-demo {
+					<style class="smallercode" contenteditable="true">.colors-demo {
   p:nth-child(1) {
     color: color-mix(in srgb, red 40%, CanvasText);
   }
@@ -393,7 +388,7 @@
 			<article id="prefers">
 				<h2><code>prefers-color-scheme</code></h2>
 				<div>
-					<style contenteditable="true">.prefers-demo {
+					<style class="smallercode" contenteditable="true">.prefers-demo {
   p:nth-child(2) {
     background-color: Indigo;
     @media (prefers-color-scheme: light) {
@@ -432,8 +427,8 @@
   }
 }</style>
 					<div class="lightdark-demo">
-						<p>Not yet in all browsers,
-							<br>but soon - so exciting!</p>
+						<p>Recently in all browsers,
+							<br>at ~80% coverage - exciting!</p>
 						<p>How are you?
 							<br>Yeah good, you?</p>
 						<p>Could be worse!
@@ -442,13 +437,51 @@
 				</div>
 			</article>
 
+			<article id="switching">
+				<h2>allow manual switching</h2>
+				<div>
+					<p>You may not want to view a site in your OS' color scheme.</p>
+					<p class="hide">When using <code>prefers-color-scheme</code>, this was a pain.</p>
+					<p class="hide">We had to override it, or double up CSS color declarations.</p>
+					<p class="hide">This is easier now! 🎉</p>
+					<p class="hide">Can we do it with CSS only? 🤔</p>
+				</div>
+			</article>
+
+			<article id="css-only-demo">
+				<iframe scrolling="no" src="https://codepen.io/sarajw/embed/XWvXvGe?default-tab=html%2Cresult&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>
+			</article>
+
+			<article id="css-only-limits">
+				<h2>limitations</h2>
+				<div>
+					<p>You get limited pretty fast by avoiding JavaScript.</p>
+					<p class="hide">Using <code>:has()</code> is magical, but only per-page.</p>
+					<p class="hide">The preference doesn't get saved while browsing the site.</p>
+					<p class="hide">You can't use <code>&lt;buttons&gt;</code> if you prefer those!</p>
+					<p class="hide">So what JavaScript do we need?</p>
+				</div>
+			</article>
+
+			<article id="with-js-demo">
+				<iframe scrolling="no" src="https://codepen.io/sarajw/embed/abeoGjz?default-tab=html%2Cresult&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>
+			</article>
+
+			<article id="with-storage-demo">
+				<iframe scrolling="no" src="https://codepen.io/sarajw/embed/vYoyVEW?default-tab=html%2Cresult&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>
+			</article>
+
+			<article id="with-aria-demo">
+				<iframe scrolling="no" src="https://codepen.io/sarajw/embed/PoMbXNp?default-tab=html%2Cresult&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>
+			</article>
+
 			<article id="summary">
 				<h2>in summary</h2>
 				<div>
 					<p class="hide">Use <code>color-scheme: light dark;</code></p>
-					<p class="hide">Use <code>color-mix()</code> when adding colors</p>
+					<p class="hide">Use <code>color-mix()</code> with <code>Canvas & CanvasText</code></p>
+					<p class="hide">Start using <code>light-dark()</code>!</p>
 					<p class="hide">Support user contrast preferences</p>
-					<p class="hide">Look forward to <code>light-dark()</code>!</p>
 					<p class="hide">Experiment and play :)</p>
 				</div>
 			</article>
@@ -491,9 +524,10 @@
 			<article id="thankyou">
 				<h2>thank you!</h2>
 				<div>
-					<p>I'm so honoured to be taking part in the 11ty Conference!</p>
-					<p>Huge thanks to the 11tyConf Crew: Zach, Olivia, Mike, David and captioner Diane.</p>
-					<p class="center">🙏💖🎈</p>
+					<br>
+					<p>I'm so happy to be taking part in the Hamburger DevFest!</p>
+					<p class="center">🙏💖⚓</p>
+					<br>
 					<p class="right">🏠 <a href="https://sarajoy.dev">sarajoy.dev</a>
 						<br>👋 <a href="https://front-end.social/@sarajw">@sarajw@front-end.social</a>
 				</div>
