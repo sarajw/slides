@@ -50,6 +50,11 @@ html {
           line-height: 15vh;
           text-align: center;
           margin: 0;
+          &.small-title {
+            font-size: 5vh;
+            height: 4vh;
+            line-height: 8vh;
+          }
         }
       }
     }
@@ -84,7 +89,7 @@ html {
     top: 26.5vh;
     left: 25%;
     width: 50%;
-    height: 47.25vh;
+    height: 44.75vh;
     scale: 2;
     border-radius: 0.5rem;
   }
@@ -145,11 +150,11 @@ html {
   .instructions {
     display: none;
     
-    text-align: left;
+    /* text-align: left;
     position: absolute;
     top: 0;
     left: 1em;
-    font-size: 0.35em;
+    font-size: 0.35em; */
   }
 
   #intro img {
@@ -330,6 +335,11 @@ style {
   white-space: pre-wrap;
 }
 
+iframe {
+  width: 800px;
+  height: 400px;
+}
+
 button:is(#show, #mode) {
   position: fixed;
   bottom: 0.5em;
@@ -344,6 +354,10 @@ button#show {
 button#mode {
   right: 1em;
   font-size: 2rem;
+}
+
+img {
+  max-width: min(100%, 40ch);
 }
 
 #themes .default, 
