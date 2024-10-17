@@ -259,6 +259,10 @@ html {
     width: auto;
   }
 
+  #scope li ul li {
+    margin-bottom: 1.5em;
+  }
+
   #other-system img {
     position: absolute;
     top: 1rem;
@@ -381,4 +385,11 @@ img {
 #choice table td {
   color: CanvasText;
   background-color: Canvas;
+}
+
+code {
+  outline: 0.1em solid #8886;
+  background-color: #8882;
+  padding: 0em 0.15em 0.1em;
+  border-radius: 0.25em;
 }

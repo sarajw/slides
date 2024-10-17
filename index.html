@@ -106,8 +106,16 @@
 				<div>
 					<div class="hide"><p>Includes:</p>
 						<ul>
-							<li class="hide">Having your site react to <code>prefers-color-scheme</code>.</li>
-							<li class="hide">Manual toggling of <code>colour-scheme</code>.</li>
+							<li class="hide">Having your site react to <code>prefers-color-scheme</code>.
+								<ul>
+									<li class="hide">Usually the operating system's setting.</li>
+								</ul>
+							</li>
+							<li class="hide">Allowing manual toggling of <code>colour-scheme</code>.
+								<ul>
+									<li class="hide">Ignoring the OS' setting for the website.</li>
+								</ul>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -362,7 +370,7 @@
 			</article>
 
 			<article id="colors">
-				<h2>other colours</h2>
+				<h2><code>color-mix()</code> and transparency</h2>
 				<div>
 					<style class="smallercode" contenteditable="true">.colors-demo {
   p:nth-child(1) {
@@ -481,9 +489,29 @@
 				<iframe scrolling="no" src="https://codepen.io/sarajw/embed/abeoGjz?default-tab=html%2Cresult&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>
 			</article>
 
+			<article id="woohoo-buttons">
+				<h2>woo-hoo, buttons!</h2>
+				<div>
+					<p>OK great, so now we can use buttons, but this still only works per-page, and is lost when the page is reloaded ♻️</p>
+					<p class="hide">So we need to store the preference for the user.</p>
+					<p class="hide">For this we can use <code>sessionStorage</code> or <code>localStorage</code>.</p>
+					<p class="hide"><code>sessionStorage</code> lasts per visit to a domain. <code>localStorage</code> is kept between visits until the user clears their browsing data.</p>
+				</div>
+			</article>
+
 			<article id="with-storage-demo">
 				<h2 class="small-title">saving to <code>localStorage</code></h2>
 				<iframe scrolling="no" src="https://codepen.io/sarajw/embed/vYoyVEW?default-tab=html%2Cresult&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>
+			</article>
+
+			<article id="aria-pressed">
+				<h2>show state in buttons</h2>
+				<div>
+					<p>The three buttons are neat, but what is the current mode? 🤔</p>
+					<p class="hide">It's not too difficult to set a class with JS on the 'active' button.</p>
+					<p class="hide">Let's use the existing <code>aria-pressed</code> attribute!</p>
+					<p class="hide">This is exactly what it's for, and has the benefit that a screen reader will also announce which option is currently active.</p>
+				</div>
 			</article>
 
 			<article id="with-aria-demo">
@@ -541,7 +569,7 @@
 				<h2>thank you!</h2>
 				<div>
 					<br>
-					<p>I'm so happy to be taking part in the Hamburger DevFest!</p>
+					<p class="center">I'm so happy to be taking part in the Hamburger DevFest!</p>
 					<p class="center">🙏💖⚓</p>
 					<br>
 					<p class="right">🏠 <a href="https://sarajoy.dev">sarajoy.dev</a>
@@ -605,9 +633,16 @@
 		}
 		let hiddenElementsInVP = document.querySelectorAll(".in-viewport");
 
+		document.addEventListener('keydown', (e) => {
+			e = e || window.event;
+			if(e.key === "F5"){
+					e.preventDefault();
+			}
+		});
+
 		document.addEventListener("keyup", (event) => {
 			setTimeout( () => {
-				if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+				if (event.key === "ArrowDown" || event.key === "ArrowUp" || event.key === "PageDown" || event.key === "PageUp") {
 					for (const element of hiddenElements) {
 						observer.observe(element)
 					}
@@ -615,14 +650,14 @@
 					hiddenElementsInVP = document.querySelectorAll(".in-viewport");
 					// console.log(hiddenElementsInVP);
 
-					if (event.key === "ArrowDown") {
+					if (event.key === "ArrowDown" || event.key === "PageDown") {
 						for (const element of hiddenElementsInVP) {
 							element.classList.remove("reveal");
 							element.classList.add("hide");
 						}
 						reveal = 0;
 					} 
-					if (event.key === "ArrowUp") {
+					if (event.key === "ArrowUp" || event.key === "PageUp") {
 						for (const element of hiddenElementsInVP) {
 							element.classList.remove("hide");
 							element.classList.add("reveal");
@@ -637,12 +672,12 @@
 			// console.log(hiddenElementsInVP)
 			if(!element) return;
 
-			if (event.key === "ArrowRight") {
+			if (event.key === "ArrowRight" || event.key === "b") {
 				element.classList.remove("hide");
 				element.classList.add("reveal");
 				reveal++;
 			}
-			if (event.key === "ArrowLeft") {
+			if (event.key === "ArrowLeft" || event.key === "F5") {
 				element.classList.remove("reveal");
 				element.classList.add("hide");
 				reveal--;
