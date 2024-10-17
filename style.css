@@ -148,13 +148,13 @@ html {
 
 
   .instructions {
-    display: none;
+    /* display: none; */
     
-    /* text-align: left;
+    text-align: left;
     position: absolute;
     top: 0;
     left: 1em;
-    font-size: 0.35em; */
+    font-size: 0.35em;
   }
 
   #intro img {
