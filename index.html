@@ -633,12 +633,12 @@
 		}
 		let hiddenElementsInVP = document.querySelectorAll(".in-viewport");
 
-		document.addEventListener('keydown', (e) => {
-			e = e || window.event;
-			if(e.key === "F5"){
-					e.preventDefault();
-			}
-		});
+		// document.addEventListener('keydown', (e) => {
+		// 	e = e || window.event;
+		// 	if(e.key === "F5"){
+		// 			e.preventDefault();
+		// 	}
+		// });
 
 		document.addEventListener("keyup", (event) => {
 			setTimeout( () => {
@@ -677,7 +677,7 @@
 				element.classList.add("reveal");
 				reveal++;
 			}
-			if (event.key === "ArrowLeft" || event.key === "F5") {
+			if (event.key === "ArrowLeft") {
 				element.classList.remove("reveal");
 				element.classList.add("hide");
 				reveal--;
