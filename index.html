@@ -335,17 +335,16 @@
 			<article id="contrast">
 				<h2>zu viel Kontrast?</h2>
 				<div>
-					<p>Those implementing WCAG for accessibility may find it unlikely.</p>
-					<p class="hide">But some migraineurs do have trouble with this!</p>
-					<p class="hide">Alongside <code>prefers-color-scheme</code> there is also
+					<p>Äh, was? sagen sie, die WCAG für Barrierefreiheit implementieren.</p>
+					<p class="hide">Aber einige Migränepatienten haben Probleme damit!</p>
+					<p class="hide">Neben <code>prefers-color-scheme</code> gibt es auch
 						<br><code>prefers-contrast</code>.</p>
-					<p class="hide">The simplest way to bring contrast down is with 
-						<br><code>filter: contrast()</code>.</p>
+					<p class="hide">Mit <code>filter: contrast()</code> kann man den Kontrast verringern.</p>
 				</div>
 			</article>
 
 			<article id="contrast-demo">
-				<h2>bringing down contrast</h2>
+				<h2>Kontrast verringern</h2>
 				<div>
 					<style class="smallercode" contenteditable="true">.contrast-demo {
   color: CanvasText;
@@ -363,13 +362,13 @@
 					<div class="contrast-demo">
 						Hellooooooo!
 						<div>How are you?</div>
-						<p class="hide lowcontrast">Ahh thanks, this calms my eyes and brain.</p>
+						<p class="hide lowcontrast">Ahh schön, das beruhigt meine Augen und mein Gehirn.</p>
 					</div>
 				</div>
 			</article>
 
 			<article id="colors">
-				<h2><code>color-mix()</code> and transparency</h2>
+				<h2><code>color-mix()</code> & transparency</h2>
 				<div>
 					<style class="smallercode" contenteditable="true">.colors-demo {
   p:nth-child(1) {
@@ -379,7 +378,7 @@
     background-color: color-mix(in srgb, Teal 60%, Canvas);
   }
   p:nth-child(3) {
-    background-color: #f0f4;
+    background-color: #f0f4; /* magenta 25% */
   }
 }</style>
 					<div class="colors-demo">
@@ -404,15 +403,15 @@
     }
   }
   p:nth-child(3) {
-    background-color: #f0f4;
+    background-color: #f0f4; /* magenta */
     @media (prefers-color-scheme: light) {
-      background-color: #0f04;
+      background-color: #0f04; /* green */
     }
   }
 }</style>
 					<div class="prefers-demo">
-						<p>This follows OS preference,
-							<br>not <code>color-scheme</code> property.</p>
+						<p>Das folgt System-Präferenz,
+							<br>nicht <code>color-scheme</code> modus.</p>
 						<p>How are you?
 							<br>Yeah good, you?</p>
 						<p>Could be worse!
@@ -435,8 +434,8 @@
   }
 }</style>
 					<div class="lightdark-demo">
-						<p>Recently in all browsers,
-							<br>at ~80% coverage - exciting!</p>
+						<p>Neulich in alle Browsers,
+							<br>~80% Abdeckung, spannend!</p>
 						<p>How are you?
 							<br>Yeah good, you?</p>
 						<p>Could be worse!
@@ -446,29 +445,28 @@
 			</article>
 
 			<article id="switching">
-				<h2>allow manual switching</h2>
+				<h2>manuelles Umschalten ermöglichen</h2>
 				<div>
-					<p>You may not want to view a site in your OS' color scheme.</p>
-					<p class="hide">When using <code>prefers-color-scheme</code>, this was a pain.</p>
-					<p class="hide">We had to override it, or double up CSS color declarations.</p>
-					<p class="hide">This is easier now! 🎉</p>
-					<p class="hide">Can we do it with CSS only? 🤔</p>
+					<p class="hide">Willst du den Web nicht im Betriebssystem-Farbschema anzeigen? Mit <code>prefers-color-scheme</code>, ist das nervig.</p>
+					<p class="hide">Wir mussten es überschreiben oder CSS verdoppeln.</p>
+					<p class="hide">Das ist jetzt einfacher! 🎉</p>
+					<p class="hide">Können wir es nur mit CSS machen? 🤔</p>
 				</div>
 			</article>
 
 			<article id="css-only-demo">
-				<h2 class="small-title"><code>:has()</code> rocks!</h2>
+				<h2 class="small-title"><code>:has()</code> rockt!</h2>
 				<iframe scrolling="no" src="https://codepen.io/sarajw/embed/XWvXvGe?default-tab=html%2Cresult&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>
 			</article>
 
 			<article id="css-only-limits">
-				<h2>limitations</h2>
+				<h2>Einschränkungen</h2>
 				<div>
-					<p>You get limited pretty fast by avoiding JavaScript.</p>
-					<p class="hide">Using <code>:has()</code> is magical, but only per-page.</p>
-					<p class="hide">The preference doesn't get saved while browsing the site.</p>
-					<p class="hide">You can't use <code>&lt;buttons&gt;</code> if you prefer those!</p>
-					<p class="hide">So what JavaScript do we need?</p>
+					<p>Ganz ohne JavaScript, bist du schnell eingeschränkt.</p>
+					<p class="hide"><code>:has()</code> ist ja magisch, aber nur pro Seite.</p>
+					<p class="hide">Gewälhter mode ist beim Blättern der Site nicht gespeichert.</p>
+					<p class="hide">Du kannst <code>&lt;button&gt;</code>s nicht verwenden, wenn du willst!</p>
+					<p class="hide">Welches JavaScript brauchen wir also?</p>
 				</div>
 			</article>
 
