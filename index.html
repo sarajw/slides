@@ -476,60 +476,61 @@
 				<div class="center">
 					<div class="hide">
 						<p><i>"JavaScript should only do what only JavaScript can do."</i></p>
-						<br>
-						<img width="600" src="/images/keiths-maxim.jpg" alt="Jeremy Keith standing in front of a screen at a conference.">
+						<p><i>JavaScript sollte nur das tun, was nur JavaScript tun kann.</i></p>
+						<img width="500" src="/images/keiths-maxim.jpg" alt="Jeremy Keith standing in front of a screen at a conference.">
 					</div>
 				</div>
 			</article>
 
 			<article id="with-js-demo">
-				<h2 class="small-title">simple functions</h2>
+				<h2 class="small-title">einfache Functions</h2>
 				<iframe scrolling="no" src="https://codepen.io/sarajw/embed/abeoGjz?default-tab=html%2Cresult&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>
 			</article>
 
 			<article id="woohoo-buttons">
-				<h2>woo-hoo, buttons!</h2>
+				<h2>juhuu, Buttons!</h2>
 				<div>
-					<p>OK great, so now we can use buttons, but this still only works per-page, and is lost when the page is reloaded ♻️</p>
-					<p class="hide">So we need to store the preference for the user.</p>
-					<p class="hide">For this we can use <code>sessionStorage</code> or <code>localStorage</code>.</p>
-					<p class="hide"><code>sessionStorage</code> lasts per visit to a domain. <code>localStorage</code> is kept between visits until the user clears their browsing data.</p>
+					<p>Supi, jetzt können wir Buttons verwenden, aber das geht noch nur pro Seite und ist weg, als die Seite neu geladen wird ♻️</p>
+					<p class="hide">Wir müssen die Präferenzen die Benutzer*innen speichern.</p>
+					<p class="hide">Wir können <code>sessionStorage</code> oder <code>localStorage</code> benutzen.</p>
+					<p class="hide"><code>sessionStorage</code> bleibt pro Besuch einer Domain.
+						<br><code>localStorage</code> bleibt zwischen den Besuchen, im Browserdaten.</p>
 				</div>
 			</article>
 
 			<article id="with-storage-demo">
-				<h2 class="small-title">saving to <code>localStorage</code></h2>
+				<h2 class="small-title">zu <code>localStorage</code> speichern</h2>
 				<iframe scrolling="no" src="https://codepen.io/sarajw/embed/vYoyVEW?default-tab=html%2Cresult&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>
 			</article>
 
 			<article id="aria-pressed">
-				<h2>show state in buttons</h2>
+				<h2>Button-Status anzeigen</h2>
 				<div>
-					<p>The three buttons are neat, but what is the current mode? 🤔</p>
-					<p class="hide">It's not too difficult to set a class with JS on the 'active' button.</p>
-					<p class="hide">Let's use the existing <code>aria-pressed</code> attribute!</p>
-					<p class="hide">This is exactly what it's for, and has the benefit that a screen reader will also announce which option is currently active.</p>
+					<p>Die drei Buttons sind nett, aber was ist der aktuelle mode? 🤔</p>
+					<p class="hide">Es ist nicht allzu schwierig, mit JS eine class auf die aktive Button festzulegen.</p>
+					<p class="hide">Verwenden wir das vorhandene <code>aria-pressed</code>-Attribut!</p>
+					<p class="hide">Genau dafür ist es gedacht und hat den Vorteil, dass ein Screenreader auch ankündigt, welche Option gerade aktiv ist.</p>
 				</div>
 			</article>
 
 			<article id="with-aria-demo">
-				<h2 class="small-title">using <code>aria-pressed</code> for buttons</h2>
+				<h2 class="small-title"><code>aria-pressed</code> für Buttons benutzen</h2>
 				<iframe scrolling="no" src="https://codepen.io/sarajw/embed/PoMbXNp?default-tab=html%2Cresult&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>
 			</article>
 
 			<article id="summary">
-				<h2>in summary</h2>
+				<h2>Zusammenfassend</h2>
 				<div>
-					<p class="hide">Use <code>color-scheme: light dark;</code></p>
-					<p class="hide">Use <code>color-mix()</code> with <code>Canvas & CanvasText</code></p>
-					<p class="hide">Start using <code>light-dark()</code>!</p>
-					<p class="hide">Support user contrast preferences</p>
-					<p class="hide">Experiment and play :)</p>
+					<p class="hide"><code>color-scheme: light dark;</code> nutzen</p>
+					<p class="hide"><code>color-mix()</code> mit <code>Canvas & CanvasText</code> testen</p>
+					<p class="hide">Mit <code>light-dark()</code> anfangen</p>
+					<p class="hide">Kontrasteinstellungen des Benutzers berücksichtigen</p>
+					<p class="hide">Experimentieren und spielen :)</p>
 				</div>
 			</article>
 
 			<article id="choice">
-				<h2>takeaway: offer choice</h2>
+				<h2>Mitgebsel: Wahlmöglichkeit bieten</h2>
 				<div>
 					<table>
 						<tr>
@@ -538,40 +539,39 @@
 							<th>dark mode</th>
 						</tr>
 						<tr>
-							<th>more contrast</th>
-							<td class="light">Hi!</td>
-							<td class="dark">Hi!</td>
+							<th>mehr Kontrast</th>
+							<td class="light">Moin!</td>
+							<td class="dark">Moin!</td>
 						</tr>
 						<tr>
-							<th>less contrast</th>
-							<td class="light lowcontrast">Hi!</td>
-							<td class="dark lowcontrast">Hi!</td>
+							<th>weniger Kontrast</th>
+							<td class="light lowcontrast">Moin!</td>
+							<td class="dark lowcontrast">Moin!</td>
 						</tr>
 					</table>
 				</div>
 			</article>
 
 			<article id="further">
-				<h2>further reading</h2>
+				<h2>ich will mehr!</h2>
 				<div>
-					<p><a href="https://sarajoy.dev/blog/color-scheme/">Do you know color-scheme?</a> by me</p>
-					<p><a href="https://web.dev/articles/color-scheme">Improved dark mode default styling with the color-scheme CSS property and the corresponding meta tag</a> by Thomas Steiner</p>
+					<p><a href="https://css-tricks.com/come-to-the-light-dark-side/">Come to the light-dark() Side</a> - ich!</p>
+					<p><a href="https://web.dev/articles/color-scheme">Improved dark mode default styling with the color-scheme CSS property and the corresponding meta tag</a> - Thomas Steiner</p>
 					<p><a href="https://weblog.anniegreens.lol/2024/04/what-ive-learned-about-css-color-scheme-and-system-color">What I've learned about CSS <code>color-scheme</code> and friends.</a>
-						<br>by Apple Annie</p>
-					<p><a href="https://codepen.io/sarajw/pen/xxzyOMZ">Color-scheme Tinkering</a> on codepen, by me again</p>
-					<p><a href="https://web.dev/articles/light-dark">CSS color-scheme-dependent colors with light-dark()</a> by Bramus</p>
+						<br>- Apple Annie</p>
+					<p><a href="https://web.dev/articles/light-dark">CSS color-scheme-dependent colors with light-dark()</a> - Bramus</p>
 				</div>
 			</article>
 
 			<article id="thankyou">
-				<h2>thank you!</h2>
+				<h2>vielen Dank!</h2>
 				<div>
-					<p class="center">I'm so happy to be taking part in the Hamburger DevFest!</p>
-					<br>
-					<p class="center">🙏💖⚓</p>
-					<p class="right">🏠 <a href="https://sarajoy.dev">sarajoy.dev</a>
-						<br>👋 <a href="https://front-end.social/@sarajw">@sarajw@front-end.social</a>
-						<br>🛝 (slides) <a href="https://devfest2024hh.sarajoy.dev/">devfest2024hh.sarajoy.dev</a>
+					<p class="center">Lieben Dank für die Einladung, Joschi!</p>
+					<p class="center">🙏💖♿</p>
+					<p class="right"><br>🏠 <a href="https://sarajoy.dev">sarajoy.dev</a>
+						<br>🦋 (Bluesky) <a href="https://bsky.app/profile/sjoy.lol">@sjoy.lol</a>
+						<br>🦣 <a href="https://front-end.social/@sarajw">@sarajw@front-end.social</a>
+						<br>🛝 <a href="https://technica11y2024nov.netlify.app/">technica11y2024nov.netlify.app</a>
 				</div>
 			</article>
 
